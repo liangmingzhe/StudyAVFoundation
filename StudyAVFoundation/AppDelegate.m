@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  iOSAVFoundationStudy
+//  StudyAVFoundation
 //
 //  Created by benjaminlmz@qq.com on 2020/10/10.
 //

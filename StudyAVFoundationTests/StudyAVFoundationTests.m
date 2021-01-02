@@ -1,17 +1,17 @@
 //
-//  iOSAVFoundationStudyTests.m
-//  iOSAVFoundationStudyTests
+//  StudyAVFoundationTests.m
+//  StudyAVFoundationTests
 //
 //  Created by benjaminlmz@qq.com on 2020/10/10.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface iOSAVFoundationStudyTests : XCTestCase
+@interface StudyAVFoundationTests : XCTestCase
 
 @end
 
-@implementation iOSAVFoundationStudyTests
+@implementation StudyAVFoundationTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.

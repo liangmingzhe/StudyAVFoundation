@@ -25,8 +25,8 @@
 		EE8C87FE2531AECE0069B01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE8C87FD2531AECE0069B01E /* Assets.xcassets */; };
 		EE8C88012531AECE0069B01E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE8C87FF2531AECE0069B01E /* LaunchScreen.storyboard */; };
 		EE8C88042531AECE0069B01E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C88032531AECE0069B01E /* main.m */; };
-		EE8C880E2531AECF0069B01E /* iOSAVFoundationStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C880D2531AECF0069B01E /* iOSAVFoundationStudyTests.m */; };
-		EE8C88192531AECF0069B01E /* iOSAVFoundationStudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C88182531AECF0069B01E /* iOSAVFoundationStudyUITests.m */; };
+		EE8C880E2531AECF0069B01E /* StudyAVFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C880D2531AECF0069B01E /* StudyAVFoundationTests.m */; };
+		EE8C88192531AECF0069B01E /* StudyAVFoundationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C88182531AECF0069B01E /* StudyAVFoundationUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,10 +80,10 @@
 		EE8C88022531AECE0069B01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE8C88032531AECE0069B01E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EE8C88092531AECF0069B01E /* StudyAVFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyAVFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE8C880D2531AECF0069B01E /* iOSAVFoundationStudyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAVFoundationStudyTests.m; sourceTree = "<group>"; };
+		EE8C880D2531AECF0069B01E /* StudyAVFoundationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyAVFoundationTests.m; sourceTree = "<group>"; };
 		EE8C880F2531AECF0069B01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE8C88142531AECF0069B01E /* StudyAVFoundationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyAVFoundationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE8C88182531AECF0069B01E /* iOSAVFoundationStudyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAVFoundationStudyUITests.m; sourceTree = "<group>"; };
+		EE8C88182531AECF0069B01E /* StudyAVFoundationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyAVFoundationUITests.m; sourceTree = "<group>"; };
 		EE8C881A2531AECF0069B01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,9 +193,9 @@
 		EE8C87E52531AECE0069B01E = {
 			isa = PBXGroup;
 			children = (
-				EE8C87F02531AECE0069B01E /* iOSAVFoundationStudy */,
-				EE8C880C2531AECF0069B01E /* iOSAVFoundationStudyTests */,
-				EE8C88172531AECF0069B01E /* iOSAVFoundationStudyUITests */,
+				EE8C87F02531AECE0069B01E /* StudyAVFoundation */,
+				EE8C880C2531AECF0069B01E /* StudyAVFoundationTests */,
+				EE8C88172531AECF0069B01E /* StudyAVFoundationUITests */,
 				EE8C87EF2531AECE0069B01E /* Products */,
 				51428F538305C94ACF95D26F /* Pods */,
 				E4F92E1E193E48F461E85F8A /* Frameworks */,
@@ -212,7 +212,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE8C87F02531AECE0069B01E /* iOSAVFoundationStudy */ = {
+		EE8C87F02531AECE0069B01E /* StudyAVFoundation */ = {
 			isa = PBXGroup;
 			children = (
 				EE8C87F12531AECE0069B01E /* AppDelegate.h */,
@@ -232,25 +232,25 @@
 				EE8C88022531AECE0069B01E /* Info.plist */,
 				EE8C88032531AECE0069B01E /* main.m */,
 			);
-			path = iOSAVFoundationStudy;
+			path = StudyAVFoundation;
 			sourceTree = "<group>";
 		};
-		EE8C880C2531AECF0069B01E /* iOSAVFoundationStudyTests */ = {
+		EE8C880C2531AECF0069B01E /* StudyAVFoundationTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE8C880D2531AECF0069B01E /* iOSAVFoundationStudyTests.m */,
+				EE8C880D2531AECF0069B01E /* StudyAVFoundationTests.m */,
 				EE8C880F2531AECF0069B01E /* Info.plist */,
 			);
-			path = iOSAVFoundationStudyTests;
+			path = StudyAVFoundationTests;
 			sourceTree = "<group>";
 		};
-		EE8C88172531AECF0069B01E /* iOSAVFoundationStudyUITests */ = {
+		EE8C88172531AECF0069B01E /* StudyAVFoundationUITests */ = {
 			isa = PBXGroup;
 			children = (
-				EE8C88182531AECF0069B01E /* iOSAVFoundationStudyUITests.m */,
+				EE8C88182531AECF0069B01E /* StudyAVFoundationUITests.m */,
 				EE8C881A2531AECF0069B01E /* Info.plist */,
 			);
-			path = iOSAVFoundationStudyUITests;
+			path = StudyAVFoundationUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,7 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE8C880E2531AECF0069B01E /* iOSAVFoundationStudyTests.m in Sources */,
+				EE8C880E2531AECF0069B01E /* StudyAVFoundationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE8C88192531AECF0069B01E /* iOSAVFoundationStudyUITests.m in Sources */,
+				EE8C88192531AECF0069B01E /* StudyAVFoundationUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +614,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAEG6YPEMR;
-				INFOPLIST_FILE = iOSAVFoundationStudy/Info.plist;
+				INFOPLIST_FILE = StudyAVFoundation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,7 +633,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAEG6YPEMR;
-				INFOPLIST_FILE = iOSAVFoundationStudy/Info.plist;
+				INFOPLIST_FILE = StudyAVFoundation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -689,16 +689,16 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAEG6YPEMR;
-				INFOPLIST_FILE = iOSAVFoundationStudyUITests/Info.plist;
+				INFOPLIST_FILE = StudyAVFoundationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.av.study.iOSAVFoundationStudyUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.av.study.StudyAVFoundationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iOSAVFoundationStudy;
+				TEST_TARGET_NAME = StudyAVFoundation;
 			};
 			name = Debug;
 		};
@@ -707,16 +707,16 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAEG6YPEMR;
-				INFOPLIST_FILE = iOSAVFoundationStudyUITests/Info.plist;
+				INFOPLIST_FILE = StudyAVFoundationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.av.study.iOSAVFoundationStudyUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.av.study.StudyAVFoundationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iOSAVFoundationStudy;
+				TEST_TARGET_NAME = StudyAVFoundation;
 			};
 			name = Release;
 		};
