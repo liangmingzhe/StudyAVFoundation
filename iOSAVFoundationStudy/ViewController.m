@@ -6,10 +6,16 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController () {
+#import "FunctionCell.h"
+#import "VideoViewController.h"
+#import "AudioViewController.h"
+#define kFunctionCellID @"FunctionCell"
+#define kWidth   [UIScreen mainScreen].bounds.size.width
+#define kHeight  [UIScreen mainScreen].bounds.size.height
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource> {
     NSArray *itemArray;
 }
+@property (nonatomic ,strong) UICollectionView *functionCollectionView;
 @end
 
 @implementation ViewController
@@ -17,33 +23,74 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupData];
+    [self setupUI];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+}
+
+- (void)setupUI {
+    self.title = @"菜单";
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.minimumLineSpacing = 0;
+    layout.minimumInteritemSpacing = 0;
+    self.functionCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) collectionViewLayout:layout];
+    self.functionCollectionView.backgroundColor = [UIColor whiteColor];
+    self.functionCollectionView.delegate = self;
+    self.functionCollectionView.dataSource = self;
+    [self.view addSubview:self.functionCollectionView];
+    [self.functionCollectionView registerNib:[UINib nibWithNibName:@"FunctionCell" bundle:nil] forCellWithReuseIdentifier:kFunctionCellID];
+    [self.functionCollectionView reloadData];
 }
 
 
 - (void)setupData {
-    itemArray = @[@"音频录制",@"音频播放",@"视频录制",@"视频播放"];
+    itemArray = @[
+    @{@"title":@"音频",@"icon":@"audio_play"},
+    @{@"title":@"视频",@"icon":@"video_play"}];
 }
-
-
-#pragma mark delegate
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 55.0f;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    cell.textLabel.text =  @"";
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    FunctionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFunctionCellID forIndexPath:indexPath];
+    cell.title.text = [itemArray[indexPath.row] valueForKey:@"title"];
+    cell.icon.image = [UIImage imageNamed:[itemArray[indexPath.row] valueForKey:@"icon"]];
     return cell;
 }
 
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return itemArray.count;
+}
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  CGSizeMake(kWidth /3,100);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(0, 0, (itemArray.count / 3 - 2) * kWidth / 3, 0);//（上、左、下、右）
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        AudioViewController *vc = [[AudioViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        VideoViewController *vc = [[VideoViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
 
 @end
