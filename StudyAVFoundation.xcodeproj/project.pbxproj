@@ -18,6 +18,7 @@
 		A5B10FF8259D6C7900AC8B38 /* LMZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FF7259D6C7900AC8B38 /* LMZAudioPlayer.m */; };
 		A5F75D9D259D7AD90056E382 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F75D9B259D7AD90056E382 /* AudioViewController.m */; };
 		A5F75D9E259D7AD90056E382 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F75D9C259D7AD90056E382 /* AudioViewController.xib */; };
+		A5F7A72D25A1C20E0072DEC4 /* AudioFileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F7A72C25A1C20E0072DEC4 /* AudioFileListViewController.m */; };
 		EE8C87F32531AECE0069B01E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C87F22531AECE0069B01E /* AppDelegate.m */; };
 		EE8C87F62531AECE0069B01E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C87F52531AECE0069B01E /* SceneDelegate.m */; };
 		EE8C87F92531AECE0069B01E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C87F82531AECE0069B01E /* ViewController.m */; };
@@ -64,6 +65,8 @@
 		A5F75D9A259D7AD90056E382 /* AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
 		A5F75D9B259D7AD90056E382 /* AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
 		A5F75D9C259D7AD90056E382 /* AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioViewController.xib; sourceTree = "<group>"; };
+		A5F7A72B25A1C20E0072DEC4 /* AudioFileListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioFileListViewController.h; sourceTree = "<group>"; };
+		A5F7A72C25A1C20E0072DEC4 /* AudioFileListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioFileListViewController.m; sourceTree = "<group>"; };
 		D132B3E9B7C81203D3B0447D /* Pods-StudyAVFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyAVFoundation.debug.xcconfig"; path = "Target Support Files/Pods-StudyAVFoundation/Pods-StudyAVFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		D826C9F09CC25120C4DC738A /* Pods-StudyAVFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyAVFoundation.release.xcconfig"; path = "Target Support Files/Pods-StudyAVFoundation/Pods-StudyAVFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		DF5CE5A3A2C6F54E791DBEBA /* Pods_StudyAVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyAVFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +154,8 @@
 				A5F75D9A259D7AD90056E382 /* AudioViewController.h */,
 				A5F75D9B259D7AD90056E382 /* AudioViewController.m */,
 				A5F75D9C259D7AD90056E382 /* AudioViewController.xib */,
+				A5F7A72B25A1C20E0072DEC4 /* AudioFileListViewController.h */,
+				A5F7A72C25A1C20E0072DEC4 /* AudioFileListViewController.m */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				EE8C87F32531AECE0069B01E /* AppDelegate.m in Sources */,
 				A5B10FE2259D612B00AC8B38 /* VoiceRecorder.m in Sources */,
 				A5433DBB259B5B0900582E07 /* VideoViewController.m in Sources */,
+				A5F7A72D25A1C20E0072DEC4 /* AudioFileListViewController.m in Sources */,
 				EE8C88042531AECE0069B01E /* main.m in Sources */,
 				EE8C87F62531AECE0069B01E /* SceneDelegate.m in Sources */,
 				A5B10FF8259D6C7900AC8B38 /* LMZAudioPlayer.m in Sources */,
