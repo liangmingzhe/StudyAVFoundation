@@ -7,13 +7,16 @@
 
 #import "AudioViewController.h"
 #import "AudioFileListViewController.h"
-#import "VoiceRecorder.h"
+#import "LMZVoiceRecorder.h"
 #import "LMZAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+
+#import "MNHTTP.h"
+
 @interface AudioViewController ()<AudioDelegate,LMZRecorderDelegate> {
     AVURLAsset        *audioAsset;    //音频信息
 }
-@property (nonatomic ,strong) VoiceRecorder     *recoder;       //录音器
+@property (nonatomic ,strong) LMZVoiceRecorder     *recoder;       //录音器
 @property (nonatomic ,strong) LMZAudioPlayer    *player;        //播放器
 @property (weak, nonatomic) IBOutlet UILabel    *playTime;
 
@@ -28,7 +31,7 @@
     // Do any additional setup after loading the view from its nib.
     [self rightBtnHandle];
     self.title = @"音频";
-    self.recoder = [[VoiceRecorder alloc] init];
+    self.recoder = [[LMZVoiceRecorder alloc] init];
     self.recoder.delegate = self;
     self.player  = [[LMZAudioPlayer alloc] init];
     self.player.delegate = self;
@@ -94,7 +97,7 @@
 }
 
 #pragma LMZRecorderDelegate
-- (void)audioRecorderDidFinishRecording:(VoiceRecorder *)recorder successfully:(BOOL)flag {
+- (void)audioRecorderDidFinishRecording:(LMZVoiceRecorder *)recorder successfully:(BOOL)flag {
     if (flag == YES) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString *urlString = self.filePathLabel.text;
@@ -102,6 +105,9 @@
             self.playTime.text = [NSString stringWithFormat:@"%@/%0.1f",@0.0,duration];
         });
     }
+}
+- (IBAction)saveAudioFile:(UIButton *)sender {
+    [self.recoder saveWithName:@""];
 }
 
 

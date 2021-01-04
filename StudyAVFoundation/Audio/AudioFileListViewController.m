@@ -31,7 +31,7 @@
     NSString * subPath = nil;
     for (NSString * str in dirArray) {
         subPath  = [self.documentPath stringByAppendingPathComponent:str];
-        if ([str hasSuffix:@".caf"]|| [str hasSuffix:@".mp3"]||[str hasSuffix:@".m4a"]) {
+        if ([str hasSuffix:@".caf"]|| [str hasSuffix:@".mp3"]||[str hasSuffix:@".m4a"]||[str hasSuffix:@".wav"]) {
             [self.audioArray addObject:str];
         }
     }
@@ -59,7 +59,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    self.selectFile([NSString stringWithFormat:@"%@%@",self.documentPath,self.audioArray[indexPath.row]], YES);
+    self.selectFile([NSString stringWithFormat:@"%@/%@",self.documentPath,self.audioArray[indexPath.row]], YES);
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.audioArray.count;
