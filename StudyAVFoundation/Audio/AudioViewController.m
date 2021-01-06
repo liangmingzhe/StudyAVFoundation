@@ -37,6 +37,8 @@
     self.player.delegate = self;
     self.filePathLabel.text = [self.recoder filePath];
     
+    [self initbtns];
+    
 }
 
 - (IBAction)recordWithState:(UIButton *)sender {
@@ -119,8 +121,62 @@
     NSLog(@"%f",audioDurationSeconds);
     return audioDurationSeconds;
 }
+- (void)initbtns {
+    UIButton *lgbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2, 100, 30)];
+    [lgbtn setTitle:@"登录" forState:UIControlStateNormal];
+    [lgbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [lgbtn addTarget:self action:@selector(loginHandle) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:lgbtn];
+    
+    UIButton *uplbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2 + 50, 100, 30)];
+    [uplbtn setTitle:@"上传" forState:UIControlStateNormal];
+    [uplbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [uplbtn addTarget:self action:@selector(uploadHandle) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:uplbtn];
+    
+    UIButton *chkbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2 + 100, 100, 30)];
+    [chkbtn setTitle:@"查询" forState:UIControlStateNormal];
+    [chkbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [chkbtn addTarget:self action:@selector(checkHandle) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:chkbtn];
+    
+    UIButton *setbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2 + 150, 100, 30)];
+    [setbtn setTitle:@"设置音频" forState:UIControlStateNormal];
+    [setbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [setbtn addTarget:self action:@selector(setHandle) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:setbtn];
+    
+    UIButton *delbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2 + 200, 100, 30)];
+    [delbtn setTitle:@"删除音频" forState:UIControlStateNormal];
+    [delbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [delbtn addTarget:self action:@selector(delHandle) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:delbtn];
+}
+- (void)loginHandle {
+    [MNHTTP loginWithUser:@"17681888581" pwd:@"111111a" block:^(id  _Nonnull dic) {NSLog(@"登录");}];
+}
 
+- (void)uploadHandle {
+    [MNHTTP uploadMp3File:self.filePathLabel.text block:^(id  _Nonnull dic) {
+        NSLog(@"%@",dic);
+    }];
+}
+- (void)checkHandle {
+    [MNHTTP fetchMp3List:^(id  _Nonnull dic) {
+        NSLog(@"");
+    }];
+}
+- (void)setHandle {
+    [MNHTTP setToneWithSN:@"MDAhAQEAbGUwMDUzMDAwMDI1YQAA" block:^(id  _Nonnull dic) {
+        NSLog(@"");
+    }];
+}
 
+- (void)delHandle {
+    [MNHTTP deleteToneWithIds:@[@(1346078971320790016)] block:^(id  _Nonnull dic) {
+        NSLog(@"delete - %@",dic);
+    }];
+}
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self.player uninit];

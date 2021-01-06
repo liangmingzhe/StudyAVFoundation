@@ -83,7 +83,7 @@
 - (void)saveWithName:(NSString *)fileName {
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *filePath = [path stringByAppendingPathComponent:@"tmp.wav"];
-    NSString *targetPath = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"temp.mp3"]];
+    NSString *targetPath = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"wangyu.mp3"]];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     [fileManager moveItemAtPath:filePath toPath:targetPath error:nil];
     
