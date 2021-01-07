@@ -19,6 +19,7 @@
 		A5F75D9D259D7AD90056E382 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F75D9B259D7AD90056E382 /* AudioViewController.m */; };
 		A5F75D9E259D7AD90056E382 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F75D9C259D7AD90056E382 /* AudioViewController.xib */; };
 		A5F7A72D25A1C20E0072DEC4 /* AudioFileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F7A72C25A1C20E0072DEC4 /* AudioFileListViewController.m */; };
+		EE0743CB25A7082500069232 /* LMZAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0743CA25A7082500069232 /* LMZAudioViewController.m */; };
 		EE8C87F32531AECE0069B01E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C87F22531AECE0069B01E /* AppDelegate.m */; };
 		EE8C87F62531AECE0069B01E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C87F52531AECE0069B01E /* SceneDelegate.m */; };
 		EE8C87F92531AECE0069B01E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C87F82531AECE0069B01E /* ViewController.m */; };
@@ -74,6 +75,8 @@
 		D132B3E9B7C81203D3B0447D /* Pods-StudyAVFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyAVFoundation.debug.xcconfig"; path = "Target Support Files/Pods-StudyAVFoundation/Pods-StudyAVFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		D826C9F09CC25120C4DC738A /* Pods-StudyAVFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyAVFoundation.release.xcconfig"; path = "Target Support Files/Pods-StudyAVFoundation/Pods-StudyAVFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		DF5CE5A3A2C6F54E791DBEBA /* Pods_StudyAVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyAVFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE0743C925A7082500069232 /* LMZAudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZAudioViewController.h; sourceTree = "<group>"; };
+		EE0743CA25A7082500069232 /* LMZAudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZAudioViewController.m; sourceTree = "<group>"; };
 		EE8C87EE2531AECE0069B01E /* StudyAVFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyAVFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8C87F12531AECE0069B01E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE8C87F22531AECE0069B01E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 		A5433DB4259B57FD00582E07 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				EE0743C825A707EC00069232 /* LMZAudioViewController */,
 				A5F75D9A259D7AD90056E382 /* AudioViewController.h */,
 				A5F75D9B259D7AD90056E382 /* AudioViewController.m */,
 				A5F75D9C259D7AD90056E382 /* AudioViewController.xib */,
@@ -203,6 +207,15 @@
 				DF5CE5A3A2C6F54E791DBEBA /* Pods_StudyAVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE0743C825A707EC00069232 /* LMZAudioViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE0743C925A7082500069232 /* LMZAudioViewController.h */,
+				EE0743CA25A7082500069232 /* LMZAudioViewController.m */,
+			);
+			path = LMZAudioViewController;
 			sourceTree = "<group>";
 		};
 		EE8C87E52531AECE0069B01E = {
@@ -494,6 +507,7 @@
 				A5B10FE2259D612B00AC8B38 /* LMZVoiceRecorder.m in Sources */,
 				A5433DBB259B5B0900582E07 /* VideoViewController.m in Sources */,
 				EE9DBD5E25A30429005883C1 /* MNSingleton.m in Sources */,
+				EE0743CB25A7082500069232 /* LMZAudioViewController.m in Sources */,
 				A5F7A72D25A1C20E0072DEC4 /* AudioFileListViewController.m in Sources */,
 				EE8C88042531AECE0069B01E /* main.m in Sources */,
 				EE8C87F62531AECE0069B01E /* SceneDelegate.m in Sources */,
