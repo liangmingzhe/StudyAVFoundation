@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LMZAudioCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *audioTitle;
+@property (weak, nonatomic) IBOutlet UIView *bottomLine;
 
 @end
 

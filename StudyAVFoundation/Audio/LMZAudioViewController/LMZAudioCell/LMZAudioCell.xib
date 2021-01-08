@@ -23,7 +23,7 @@
                             <constraint firstAttribute="height" constant="20" id="I6A-w5-aab"/>
                             <constraint firstAttribute="width" constant="20" id="J5t-98-da9"/>
                         </constraints>
-                        <state key="normal" image="news_edit_choice"/>
+                        <state key="normal" image="home_set_time_set_choice"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVr-R0-I1U">
                         <rect key="frame" x="284" y="12" width="20" height="20"/>
@@ -31,7 +31,7 @@
                             <constraint firstAttribute="width" constant="20" id="k7M-0F-E0k"/>
                             <constraint firstAttribute="height" constant="20" id="pDY-Mp-2Lt"/>
                         </constraints>
-                        <state key="normal" image="news_edit_choice"/>
+                        <state key="normal" image="home_set_time_set_choice"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="警戒音1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFN-W2-mC0">
                         <rect key="frame" x="40" y="12" width="214" height="20"/>
@@ -39,27 +39,37 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fX-cm-zug">
+                        <rect key="frame" x="15" y="42.5" width="290" height="0.5"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="6FF-LY-6t4"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="UU9-Zm-SSS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1jR-oA-Y5k"/>
                     <constraint firstItem="PFN-W2-mC0" firstAttribute="top" secondItem="UU9-Zm-SSS" secondAttribute="top" id="3gu-PW-PEf"/>
                     <constraint firstItem="UU9-Zm-SSS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5pO-qA-fRu"/>
                     <constraint firstItem="PFN-W2-mC0" firstAttribute="centerY" secondItem="UU9-Zm-SSS" secondAttribute="centerY" id="MQ0-Wc-NkK"/>
+                    <constraint firstItem="2fX-cm-zug" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="SUX-5o-bgb"/>
                     <constraint firstItem="LVr-R0-I1U" firstAttribute="leading" secondItem="PFN-W2-mC0" secondAttribute="trailing" constant="30" id="UOY-AE-QEI"/>
                     <constraint firstItem="LVr-R0-I1U" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UYx-Lf-KMo"/>
+                    <constraint firstAttribute="trailing" secondItem="2fX-cm-zug" secondAttribute="trailing" constant="15" id="ZhF-6B-1sZ"/>
                     <constraint firstItem="PFN-W2-mC0" firstAttribute="leading" secondItem="UU9-Zm-SSS" secondAttribute="trailing" constant="10" id="jL9-cb-XfH"/>
+                    <constraint firstAttribute="bottom" secondItem="2fX-cm-zug" secondAttribute="bottom" constant="1" id="kqc-L0-mKL"/>
                     <constraint firstAttribute="trailing" secondItem="LVr-R0-I1U" secondAttribute="trailing" constant="16" id="swV-is-MJV"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
             <connections>
                 <outlet property="audioTitle" destination="PFN-W2-mC0" id="l5p-Qg-ZJC"/>
+                <outlet property="bottomLine" destination="2fX-cm-zug" id="Hsk-dG-Rcx"/>
             </connections>
-            <point key="canvasLocation" x="-157" y="-65"/>
+            <point key="canvasLocation" x="-157.97101449275362" y="-65.625"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="news_edit_choice" width="128" height="128"/>
+        <image name="home_set_time_set_choice" width="22" height="22"/>
     </resources>
 </document>
