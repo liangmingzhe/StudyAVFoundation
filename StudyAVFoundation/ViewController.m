@@ -9,6 +9,7 @@
 #import "FunctionCell.h"
 #import "VideoViewController.h"
 #import "AudioViewController.h"
+#import "LMZAudioViewController.h"
 #define kFunctionCellID @"FunctionCell"
 #define kWidth   [UIScreen mainScreen].bounds.size.width
 #define kHeight  [UIScreen mainScreen].bounds.size.height
@@ -52,7 +53,8 @@
 - (void)setupData {
     itemArray = @[
     @{@"title":@"音频",@"icon":@"audio_play"},
-    @{@"title":@"视频",@"icon":@"video_play"}];
+    @{@"title":@"视频",@"icon":@"video_play"},
+    @{@"title":@"测试",@"icon":@"video_play"}];
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -87,9 +89,13 @@
     if (indexPath.row == 0) {
         AudioViewController *vc = [[AudioViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
-    }else {
+    }else if(indexPath.row == 1) {
         VideoViewController *vc = [[VideoViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        LMZAudioViewController *vc = [[LMZAudioViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        
     }
 }
 

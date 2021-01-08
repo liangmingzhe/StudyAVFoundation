@@ -8,9 +8,13 @@
 #import "LMZAudioViewController.h"
 #define WIDTH    [UIScreen mainScreen].bounds.size.width
 #define HEIGHT   [UIScreen mainScreen].bounds.size.height
-#define kIdr    @"audio_cell"
+#define kIdr    @"LMZAudioCell"
+#import "LMZAudioCell.h"
 @interface LMZAudioViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong)UITableView *audioTableview;
+
+@property (weak, nonatomic) IBOutlet UITableView *audioTableview;
+@property (nonatomic,strong) NSArray<NSString *> *audioArray;
+
 @end
 
 @implementation LMZAudioViewController
@@ -18,13 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
+    self.audioArray = @[@"录音1",@"录音2",@"录音3",@"录音4",@"录音5"];
 }
 
 - (void)setupUI {
-    self.audioTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStylePlain];
-    self.audioTableview.delegate = self;
-    self.audioTableview.dataSource = self;
-    [self.view addSubview:self.audioTableview];
+
+    self.audioTableview.tableFooterView = [[UIView alloc] init];
+    [self.audioTableview registerNib:[UINib nibWithNibName:@"LMZAudioCell" bundle:nil] forCellReuseIdentifier:kIdr];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -34,8 +38,13 @@
     return 44.0f;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kIdr];
+    LMZAudioCell *cell = [tableView dequeueReusableCellWithIdentifier:kIdr forIndexPath:indexPath];
+    cell.audioTitle.text = self.audioArray[indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LMZAudioViewController">
+            <connections>
+                <outlet property="audioTableview" destination="brK-H7-Tvt" id="y1n-xg-SFg"/>
+                <outlet property="view" destination="iN0-l3-epB" id="fUp-79-qbW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="brK-H7-Tvt">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="09n-xS-yKx"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="FrJ-EX-occ"/>
+                        <outlet property="delegate" destination="-1" id="SJg-S4-wlx"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dD-0V-rza">
+                    <rect key="frame" x="175.5" y="730" width="63" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="P1u-Iu-rW6"/>
+                        <constraint firstAttribute="width" constant="63" id="rIU-9U-4AI"/>
+                    </constraints>
+                    <state key="normal" image="alert_btn_start"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="brK-H7-Tvt" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="JIU-Eg-civ"/>
+                <constraint firstItem="brK-H7-Tvt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Nb2-bl-NLs"/>
+                <constraint firstItem="brK-H7-Tvt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gkA-vh-AN7"/>
+                <constraint firstItem="2dD-0V-rza" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uht-VU-iq1"/>
+                <constraint firstItem="2dD-0V-rza" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.7" id="zJd-PB-PW9"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alert_btn_start" width="63" height="63"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

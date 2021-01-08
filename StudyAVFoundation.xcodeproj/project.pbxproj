@@ -16,6 +16,9 @@
 		A5B10FDB259C6CEA00AC8B38 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FDA259C6CEA00AC8B38 /* BaseViewController.m */; };
 		A5B10FE2259D612B00AC8B38 /* LMZVoiceRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FE1259D612B00AC8B38 /* LMZVoiceRecorder.m */; };
 		A5B10FF8259D6C7900AC8B38 /* LMZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FF7259D6C7900AC8B38 /* LMZAudioPlayer.m */; };
+		A5F614F025A749CA00882DF8 /* LMZAudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F614EE25A749CA00882DF8 /* LMZAudioCell.m */; };
+		A5F614F125A749CA00882DF8 /* LMZAudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F614EF25A749CA00882DF8 /* LMZAudioCell.xib */; };
+		A5F614FC25A754A300882DF8 /* LMZAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F614FB25A754A300882DF8 /* LMZAudioViewController.xib */; };
 		A5F75D9D259D7AD90056E382 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F75D9B259D7AD90056E382 /* AudioViewController.m */; };
 		A5F75D9E259D7AD90056E382 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F75D9C259D7AD90056E382 /* AudioViewController.xib */; };
 		A5F7A72D25A1C20E0072DEC4 /* AudioFileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F7A72C25A1C20E0072DEC4 /* AudioFileListViewController.m */; };
@@ -67,6 +70,10 @@
 		A5B10FE1259D612B00AC8B38 /* LMZVoiceRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZVoiceRecorder.m; sourceTree = "<group>"; };
 		A5B10FF6259D6C7900AC8B38 /* LMZAudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZAudioPlayer.h; sourceTree = "<group>"; };
 		A5B10FF7259D6C7900AC8B38 /* LMZAudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZAudioPlayer.m; sourceTree = "<group>"; };
+		A5F614ED25A749CA00882DF8 /* LMZAudioCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZAudioCell.h; sourceTree = "<group>"; };
+		A5F614EE25A749CA00882DF8 /* LMZAudioCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZAudioCell.m; sourceTree = "<group>"; };
+		A5F614EF25A749CA00882DF8 /* LMZAudioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LMZAudioCell.xib; sourceTree = "<group>"; };
+		A5F614FB25A754A300882DF8 /* LMZAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LMZAudioViewController.xib; sourceTree = "<group>"; };
 		A5F75D9A259D7AD90056E382 /* AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
 		A5F75D9B259D7AD90056E382 /* AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
 		A5F75D9C259D7AD90056E382 /* AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioViewController.xib; sourceTree = "<group>"; };
@@ -201,6 +208,16 @@
 			path = LMZAudioPlayer;
 			sourceTree = "<group>";
 		};
+		A5F614EC25A7499200882DF8 /* LMZAudioCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5F614ED25A749CA00882DF8 /* LMZAudioCell.h */,
+				A5F614EE25A749CA00882DF8 /* LMZAudioCell.m */,
+				A5F614EF25A749CA00882DF8 /* LMZAudioCell.xib */,
+			);
+			path = LMZAudioCell;
+			sourceTree = "<group>";
+		};
 		E4F92E1E193E48F461E85F8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +231,8 @@
 			children = (
 				EE0743C925A7082500069232 /* LMZAudioViewController.h */,
 				EE0743CA25A7082500069232 /* LMZAudioViewController.m */,
+				A5F614FB25A754A300882DF8 /* LMZAudioViewController.xib */,
+				A5F614EC25A7499200882DF8 /* LMZAudioCell */,
 			);
 			path = LMZAudioViewController;
 			sourceTree = "<group>";
@@ -429,11 +448,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE8C88012531AECE0069B01E /* LaunchScreen.storyboard in Resources */,
+				A5F614F125A749CA00882DF8 /* LMZAudioCell.xib in Resources */,
 				EE8C87FE2531AECE0069B01E /* Assets.xcassets in Resources */,
 				EE8C87FC2531AECE0069B01E /* Main.storyboard in Resources */,
 				A5F75D9E259D7AD90056E382 /* AudioViewController.xib in Resources */,
 				A5433DBC259B5B0900582E07 /* VideoViewController.xib in Resources */,
 				A5433DAC259B4AC200582E07 /* FunctionCell.xib in Resources */,
+				A5F614FC25A754A300882DF8 /* LMZAudioViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +523,7 @@
 			files = (
 				EE8C87F92531AECE0069B01E /* ViewController.m in Sources */,
 				A5B10FDB259C6CEA00AC8B38 /* BaseViewController.m in Sources */,
+				A5F614F025A749CA00882DF8 /* LMZAudioCell.m in Sources */,
 				EE9DBD5825A3037E005883C1 /* MNHTTP.m in Sources */,
 				EE8C87F32531AECE0069B01E /* AppDelegate.m in Sources */,
 				A5B10FE2259D612B00AC8B38 /* LMZVoiceRecorder.m in Sources */,
