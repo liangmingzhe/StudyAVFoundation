@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,17 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qb-lr-2O5">
-                    <rect key="frame" x="177" y="776.5" width="60" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="Nw6-IA-FCL"/>
-                        <constraint firstAttribute="width" constant="60" id="ahJ-Zw-tSe"/>
-                    </constraints>
-                    <state key="normal" title="添加文件" image="file_add"/>
-                    <connections>
-                        <action selector="selectFileFromSystemAlbum:" destination="-1" eventType="touchUpInside" id="XO2-CY-mfE"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4x-8P-N9y">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,17 +31,14 @@
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="7qb-lr-2O5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.8" id="9Yq-q5-hc7"/>
                 <constraint firstItem="m4x-8P-N9y" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="bKL-1q-uey"/>
                 <constraint firstItem="m4x-8P-N9y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f4X-Od-2bQ"/>
-                <constraint firstItem="7qb-lr-2O5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hSN-09-dmt"/>
                 <constraint firstItem="m4x-8P-N9y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ksV-xB-v42"/>
             </constraints>
-            <point key="canvasLocation" x="-103" y="5"/>
+            <point key="canvasLocation" x="-104.34782608695653" y="4.6875"/>
         </view>
     </objects>
     <resources>
-        <image name="file_add" width="200" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

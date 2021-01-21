@@ -8,27 +8,66 @@
 #import "VideoViewController.h"
 #import "TZImagePickerController.h"
 #import "LMZVideoAVPlayer.h"
-
+#import "LMZVideoProgressView.h"
+#define WIDTH   [UIScreen mainScreen].bounds.size.width
+#define HEIGHT   [UIScreen mainScreen].bounds.size.height
 @interface VideoViewController ()<TZImagePickerControllerDelegate,UINavigationControllerDelegate,LMZVideoAVPlayerProtocol>
 
 @property (weak, nonatomic) IBOutlet UIView *playerView;
 @property (nonatomic,strong) LMZVideoAVPlayer *player;
 @property (nonatomic,strong) UIImageView *imagePlayer;
-@property (nonatomic,strong) UIButton *playBtn;
+
+@property (nonatomic,strong) LMZVideoProgressView *progressView;
 @end
 
 @implementation VideoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.playBtn.frame = CGRectMake(10, 200, 50, 50);
-    [self.view addSubview:self.playBtn];
     
+    // 导航栏右侧按键初始化
+    [self rightBtnHandle];
+    
+    //播放进度控制
+    self.progressView = [[LMZVideoProgressView alloc] initWithFrame:CGRectMake(10, 400, WIDTH - 20, 50)];
+    [self.view addSubview:self.progressView];
+    __weak typeof (self)weakSelf = self;
+    self.progressView.valueBlock = ^(float value, BOOL isfinished) {
+        if (isfinished == YES) {
+            [weakSelf.player play];
+        }else {
+            [weakSelf.player pause];
+        }
+        //进度条触摸事件处理
+        float v = value;
+        
+        [weakSelf.player seekToVideoPrecent:v completionHandler:^(BOOL finished) {
+        
+        }];
+    };
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
 }
 
+
+- (void)rightBtnHandle {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
+    UIButton *custombtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
+    [custombtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [view addSubview:custombtn];
+    [custombtn setTitle:@"打开" forState:UIControlStateNormal];
+    [custombtn addTarget:self action:@selector(selectFileFromSystemAlbum:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:view];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+
 #pragma mark:TZImagePickerDelegate
-- (IBAction)selectFileFromSystemAlbum:(id)sender {
+- (void)selectFileFromSystemAlbum:(id)sender {
     TZImagePickerController *pickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
     pickerVC.delegate = self;
     [pickerVC setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {}];
@@ -54,6 +93,12 @@
                 self.player = [[LMZVideoAVPlayer alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width *9/16) url:url.absoluteString];
                 self.player.playDelegate = self;
                 [self.playerView addSubview:self.player];
+                
+                self.progressView.duration = self.player.totalTime;
+                self.progressView.current = self.player.currentTime;
+                self.progressView.progressValue = self.player.currentTime/self.player.totalTime;
+
+                
             });
         }];
     }else if(asset.mediaType == PHAssetMediaTypeImage){
@@ -69,6 +114,13 @@
     self.imagePlayer = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.playerView.frame.size.height)];
     [self.playerView addSubview:self.imagePlayer];
     self.imagePlayer.image = [photos firstObject];
+}
+
+
+- (void)LMZVideoAVPlayerRunning:(CGFloat)currentTime totalTime:(CGFloat)totalTime {
+    self.progressView.duration = totalTime;
+    self.progressView.current = currentTime;
+    self.progressView.progressValue = currentTime/totalTime;
 }
 
 

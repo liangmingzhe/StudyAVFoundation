@@ -12,8 +12,9 @@
     CMTime time;
     BOOL isFirstPlay;
 }
-@property (nonatomic,strong) AVPlayer* mAvPlayer;
-
+@property (nonatomic,strong) AVPlayer   *mAvPlayer;
+@property (nonatomic,strong) AVURLAsset *avURLAsset;
+@property (nonatomic,strong) AVAssetImageGenerator *generator;
 @end
 @implementation LMZVideoAVPlayer
 
@@ -154,9 +155,26 @@
     
     CMTime time = CMTimeMakeWithSeconds(CMTimeGetSeconds(self.mAvPlayer.currentItem.duration) * precent, fps);
     [self.mAvPlayer seekToTime:time toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:^(BOOL finished) {
-        [self.mAvPlayer play];
         self.playState = MN_VIDEO_STATE_PLAY;
         completionHandler(finished);
     }];
+}
+
+
+// 抓取视频封面
+- (UIImage *)fetchThumbnailImageWithTime:(CMTime)time {
+    if (self.avURLAsset == nil) {
+        self.avURLAsset = [[AVURLAsset alloc] initWithURL:[NSURL fileURLWithPath:_videoUrl] options:nil];
+    }
+    if (self.generator == nil) {
+        self.generator = [[AVAssetImageGenerator alloc] initWithAsset:self.avURLAsset];
+        self.generator.appliesPreferredTrackTransform = YES;
+    }
+    NSError *error = nil;
+    CMTime actualTime;
+    CGImageRef image = [self.generator copyCGImageAtTime:time actualTime:&actualTime error:&error];
+    UIImage *thumb = [[UIImage alloc] initWithCGImage:image];
+    CGImageRelease(image);
+    return thumb;
 }
 @end

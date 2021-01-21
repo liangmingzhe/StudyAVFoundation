@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic ,weak) id<LMZVideoAVPlayerProtocol>playDelegate;
 @property (nonatomic ,assign) MN_VIDEO_STATE playState;
 @property (nonatomic,strong) AVPlayerItem *playerItem;
+
+
 @property (nonatomic,assign) CGFloat totalTime;
 
 @property (nonatomic,assign) CGFloat currentTime;
@@ -39,6 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)pause;
 - (void)stop;
 - (void)seekToVideoPrecent:(CGFloat)precent completionHandler:(void (^)(BOOL finished))completionHandler;
+
+
+// 获取视频指定时间的封面
+- (UIImage *)fetchThumbnailImageWithTime:(CMTime)time;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,6 +12,7 @@
 		A5433DAC259B4AC200582E07 /* FunctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5433DAA259B4AC200582E07 /* FunctionCell.xib */; };
 		A5433DBB259B5B0900582E07 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5433DB9259B5B0900582E07 /* VideoViewController.m */; };
 		A5433DBC259B5B0900582E07 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5433DBA259B5B0900582E07 /* VideoViewController.xib */; };
+		A592EB0C25B88AE500615173 /* LMZVideoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A592EB0B25B88AE500615173 /* LMZVideoProgressView.m */; };
 		A5B10FD5259C6B9300AC8B38 /* LMZVideoAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FD3259C6B9300AC8B38 /* LMZVideoAVPlayer.m */; };
 		A5B10FDB259C6CEA00AC8B38 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FDA259C6CEA00AC8B38 /* BaseViewController.m */; };
 		A5B10FE2259D612B00AC8B38 /* LMZVoiceRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FE1259D612B00AC8B38 /* LMZVoiceRecorder.m */; };
@@ -65,6 +66,8 @@
 		A5433DB8259B5B0900582E07 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		A5433DB9259B5B0900582E07 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		A5433DBA259B5B0900582E07 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		A592EB0A25B88AE500615173 /* LMZVideoProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZVideoProgressView.h; sourceTree = "<group>"; };
+		A592EB0B25B88AE500615173 /* LMZVideoProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZVideoProgressView.m; sourceTree = "<group>"; };
 		A5B10FD3259C6B9300AC8B38 /* LMZVideoAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMZVideoAVPlayer.m; sourceTree = "<group>"; };
 		A5B10FD4259C6B9300AC8B38 /* LMZVideoAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMZVideoAVPlayer.h; sourceTree = "<group>"; };
 		A5B10FD9259C6CE900AC8B38 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -189,11 +192,20 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
+		A592EB0925B88AB800615173 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		A5B10FD2259C6B9300AC8B38 /* LMZVideoAVPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				A5B10FD3259C6B9300AC8B38 /* LMZVideoAVPlayer.m */,
 				A5B10FD4259C6B9300AC8B38 /* LMZVideoAVPlayer.h */,
+				A592EB0A25B88AE500615173 /* LMZVideoProgressView.h */,
+				A592EB0B25B88AE500615173 /* LMZVideoProgressView.m */,
 			);
 			path = LMZVideoAVPlayer;
 			sourceTree = "<group>";
@@ -275,6 +287,7 @@
 		EE8C87F02531AECE0069B01E /* StudyAVFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				A592EB0925B88AB800615173 /* Widgets */,
 				EECC469A25A2E393007647BE /* LMZPlayer */,
 				EECC469225A2E32D007647BE /* Vendors */,
 				EE8C87F12531AECE0069B01E /* AppDelegate.h */,
@@ -554,6 +567,7 @@
 				A5F75D9D259D7AD90056E382 /* AudioViewController.m in Sources */,
 				A5433DAB259B4AC200582E07 /* FunctionCell.m in Sources */,
 				EE0743F025A7F48700069232 /* LMZRecordActionView.m in Sources */,
+				A592EB0C25B88AE500615173 /* LMZVideoProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
