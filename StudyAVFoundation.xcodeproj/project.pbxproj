@@ -192,13 +192,6 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		A592EB0925B88AB800615173 /* Widgets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Widgets;
-			sourceTree = "<group>";
-		};
 		A5B10FD2259C6B9300AC8B38 /* LMZVideoAVPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,7 +280,6 @@
 		EE8C87F02531AECE0069B01E /* StudyAVFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				A592EB0925B88AB800615173 /* Widgets */,
 				EECC469A25A2E393007647BE /* LMZPlayer */,
 				EECC469225A2E32D007647BE /* Vendors */,
 				EE8C87F12531AECE0069B01E /* AppDelegate.h */,
