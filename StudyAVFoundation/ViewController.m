@@ -91,7 +91,8 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if(indexPath.row == 1) {
         VideoViewController *vc = [[VideoViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
     }else {
         LMZAudioViewController *vc = [[LMZAudioViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];

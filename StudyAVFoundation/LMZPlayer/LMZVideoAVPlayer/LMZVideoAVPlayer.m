@@ -26,17 +26,17 @@
     return self;
 }
 - (id)initWithFrame:(CGRect)frame url:(NSString *)url{
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
     if (self) {
         _videoUrl = url;
-        [self initPlayer];
+        [self initPlayerWithFrame:frame];
         [self addProgressObserver];
         isFirstPlay = NO;
     }
     return self;
 }
 
-- (void)initPlayer{
+- (void)initPlayerWithFrame:(CGRect)frame{
     NSURL* url = [NSURL URLWithString:_videoUrl];
     self.playerItem = [AVPlayerItem playerItemWithURL:url];
     [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
@@ -45,7 +45,7 @@
     
     AVPlayerLayer* layer = [AVPlayerLayer playerLayerWithPlayer:_mAvPlayer];
     
-    layer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width/1.783);
+    layer.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
     
     time = kCMTimeZero;
     _currentTime = (CGFloat)time.value/time.timescale;//得到当前的播放时
@@ -115,7 +115,7 @@
 - (void)play {
     if (isFirstPlay == YES) {
         isFirstPlay = NO;
-        [self initPlayer];
+        [self initPlayerWithFrame:self.bounds];
         [self addProgressObserver];
     }
     [_mAvPlayer play];

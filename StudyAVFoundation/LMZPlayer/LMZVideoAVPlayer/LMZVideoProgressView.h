@@ -17,6 +17,7 @@ typedef  void(^ValueChanged)(float value,BOOL isfinished);
 
 @property (nonatomic,assign) float progressValue;
 
+- (NSString *)textFormatWithValue:(float)value duration:(float)duration;
 @end
 
 NS_ASSUME_NONNULL_END
