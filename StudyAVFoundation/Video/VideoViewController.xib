@@ -116,7 +116,7 @@
                 <constraint firstItem="Qvh-AE-9IX" firstAttribute="top" secondItem="m4x-8P-N9y" secondAttribute="bottom" id="lJ8-oi-9F4"/>
                 <constraint firstItem="Qvh-AE-9IX" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="ulJ-GH-OWs"/>
             </constraints>
-            <point key="canvasLocation" x="-462.31884057971018" y="-131.25"/>
+            <point key="canvasLocation" x="-2048" y="-1606"/>
         </view>
     </objects>
     <resources>

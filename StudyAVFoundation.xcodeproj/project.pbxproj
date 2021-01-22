@@ -40,6 +40,13 @@
 		EE9DBD5825A3037E005883C1 /* MNHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9DBD5725A3037E005883C1 /* MNHTTP.m */; };
 		EE9DBD5E25A30429005883C1 /* MNSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9DBD5D25A30429005883C1 /* MNSingleton.m */; };
 		EECC469625A2E34C007647BE /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECC469425A2E34C007647BE /* libmp3lame.a */; };
+		EEDBC71125BAD399009B3863 /* LMZRailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDBC70F25BAD399009B3863 /* LMZRailCell.m */; };
+		EEDBC71225BAD399009B3863 /* LMZRailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEDBC71025BAD399009B3863 /* LMZRailCell.xib */; };
+		EEF2497525BACAE200687DDB /* EditHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF2496C25BACAE200687DDB /* EditHeadView.m */; };
+		EEF2497625BACAE200687DDB /* LMZVideoEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF2496D25BACAE200687DDB /* LMZVideoEditView.m */; };
+		EEF2497725BACAE200687DDB /* EditMiddleView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF2496E25BACAE200687DDB /* EditMiddleView.m */; };
+		EEF2497825BACAE200687DDB /* LMZVideoEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF2497225BACAE200687DDB /* LMZVideoEditView.xib */; };
+		EEF2497925BACAE200687DDB /* EditTailView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF2497425BACAE200687DDB /* EditTailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +128,18 @@
 		EE9DBD5D25A30429005883C1 /* MNSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNSingleton.m; sourceTree = "<group>"; };
 		EECC469425A2E34C007647BE /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		EECC469525A2E34C007647BE /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		EEDBC70E25BAD399009B3863 /* LMZRailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZRailCell.h; sourceTree = "<group>"; };
+		EEDBC70F25BAD399009B3863 /* LMZRailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZRailCell.m; sourceTree = "<group>"; };
+		EEDBC71025BAD399009B3863 /* LMZRailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LMZRailCell.xib; sourceTree = "<group>"; };
+		EEF2496C25BACAE200687DDB /* EditHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditHeadView.m; sourceTree = "<group>"; };
+		EEF2496D25BACAE200687DDB /* LMZVideoEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMZVideoEditView.m; sourceTree = "<group>"; };
+		EEF2496E25BACAE200687DDB /* EditMiddleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMiddleView.m; sourceTree = "<group>"; };
+		EEF2496F25BACAE200687DDB /* EditTailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTailView.h; sourceTree = "<group>"; };
+		EEF2497025BACAE200687DDB /* LMZVideoEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMZVideoEditView.h; sourceTree = "<group>"; };
+		EEF2497125BACAE200687DDB /* EditHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditHeadView.h; sourceTree = "<group>"; };
+		EEF2497225BACAE200687DDB /* LMZVideoEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMZVideoEditView.xib; sourceTree = "<group>"; };
+		EEF2497325BACAE200687DDB /* EditMiddleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMiddleView.h; sourceTree = "<group>"; };
+		EEF2497425BACAE200687DDB /* EditTailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +194,7 @@
 				A5433DB8259B5B0900582E07 /* VideoViewController.h */,
 				A5433DB9259B5B0900582E07 /* VideoViewController.m */,
 				A5433DBA259B5B0900582E07 /* VideoViewController.xib */,
+				EEF2497D25BACAE600687DDB /* View */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -361,6 +381,33 @@
 			path = LMZPlayer;
 			sourceTree = "<group>";
 		};
+		EEF2496B25BACAE200687DDB /* LMZVideoEditView */ = {
+			isa = PBXGroup;
+			children = (
+				EEF2496D25BACAE200687DDB /* LMZVideoEditView.m */,
+				EEF2497025BACAE200687DDB /* LMZVideoEditView.h */,
+				EEF2497225BACAE200687DDB /* LMZVideoEditView.xib */,
+				EEF2496C25BACAE200687DDB /* EditHeadView.m */,
+				EEF2497125BACAE200687DDB /* EditHeadView.h */,
+				EEF2496F25BACAE200687DDB /* EditTailView.h */,
+				EEF2497425BACAE200687DDB /* EditTailView.m */,
+				EEF2497325BACAE200687DDB /* EditMiddleView.h */,
+				EEF2496E25BACAE200687DDB /* EditMiddleView.m */,
+				EEDBC70E25BAD399009B3863 /* LMZRailCell.h */,
+				EEDBC70F25BAD399009B3863 /* LMZRailCell.m */,
+				EEDBC71025BAD399009B3863 /* LMZRailCell.xib */,
+			);
+			path = LMZVideoEditView;
+			sourceTree = "<group>";
+		};
+		EEF2497D25BACAE600687DDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEF2496B25BACAE200687DDB /* LMZVideoEditView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE8C88012531AECE0069B01E /* LaunchScreen.storyboard in Resources */,
+				EEDBC71225BAD399009B3863 /* LMZRailCell.xib in Resources */,
 				A5F614F125A749CA00882DF8 /* LMZAudioCell.xib in Resources */,
 				EE0743F525A7F4A800069232 /* LMZRecordActionView.xib in Resources */,
 				EE8C87FE2531AECE0069B01E /* Assets.xcassets in Resources */,
@@ -473,6 +521,7 @@
 				A5F75D9E259D7AD90056E382 /* AudioViewController.xib in Resources */,
 				A5433DBC259B5B0900582E07 /* VideoViewController.xib in Resources */,
 				A5433DAC259B4AC200582E07 /* FunctionCell.xib in Resources */,
+				EEF2497825BACAE200687DDB /* LMZVideoEditView.xib in Resources */,
 				A5F614FC25A754A300882DF8 /* LMZAudioViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,9 +591,12 @@
 			files = (
 				EE8C87F92531AECE0069B01E /* ViewController.m in Sources */,
 				A5B10FDB259C6CEA00AC8B38 /* BaseViewController.m in Sources */,
+				EEF2497625BACAE200687DDB /* LMZVideoEditView.m in Sources */,
+				EEF2497525BACAE200687DDB /* EditHeadView.m in Sources */,
 				A5F614F025A749CA00882DF8 /* LMZAudioCell.m in Sources */,
 				EE9DBD5825A3037E005883C1 /* MNHTTP.m in Sources */,
 				EE8C87F32531AECE0069B01E /* AppDelegate.m in Sources */,
+				EEF2497725BACAE200687DDB /* EditMiddleView.m in Sources */,
 				A5B10FE2259D612B00AC8B38 /* LMZVoiceRecorder.m in Sources */,
 				A5433DBB259B5B0900582E07 /* VideoViewController.m in Sources */,
 				EE9DBD5E25A30429005883C1 /* MNSingleton.m in Sources */,
@@ -557,9 +609,11 @@
 				A5B10FF8259D6C7900AC8B38 /* LMZAudioPlayer.m in Sources */,
 				A5B10FD5259C6B9300AC8B38 /* LMZVideoAVPlayer.m in Sources */,
 				A5F75D9D259D7AD90056E382 /* AudioViewController.m in Sources */,
+				EEF2497925BACAE200687DDB /* EditTailView.m in Sources */,
 				A5433DAB259B4AC200582E07 /* FunctionCell.m in Sources */,
 				EE0743F025A7F48700069232 /* LMZRecordActionView.m in Sources */,
 				A592EB0C25B88AE500615173 /* LMZVideoProgressView.m in Sources */,
+				EEDBC71125BAD399009B3863 /* LMZRailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

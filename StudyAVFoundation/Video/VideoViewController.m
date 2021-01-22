@@ -9,6 +9,8 @@
 #import "TZImagePickerController.h"         //
 #import "LMZVideoAVPlayer.h"
 #import "LMZVideoProgressView.h"
+#import "LMZVideoEditView.h"
+
 #define  WIDTH           [UIScreen mainScreen].bounds.size.width
 #define  HEIGHT          [UIScreen mainScreen].bounds.size.height
 @interface VideoViewController ()<TZImagePickerControllerDelegate,LMZVideoAVPlayerProtocol,UINavigationControllerDelegate>
@@ -19,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *topVideoScreenView;
 @property (weak, nonatomic) IBOutlet UIView *bottomControlPanelView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) LMZVideoEditView *videoEditView;
 
 @end
 
@@ -47,6 +50,11 @@
         
         }];
     };
+    
+    self.videoEditView = [[[NSBundle mainBundle] loadNibNamed:@"LMZVideoEditView" owner:self options:nil] lastObject];
+    [self.videoEditView setFrame:CGRectMake(0, 0, self.bottomControlPanelView.frame.size.width, self.bottomControlPanelView.frame.size.height - 100)];
+    [self.bottomControlPanelView addSubview:self.videoEditView];
+    
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
