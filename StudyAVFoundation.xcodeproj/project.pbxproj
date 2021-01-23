@@ -39,6 +39,8 @@
 		EE9DBD4F25A301F0005883C1 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9DBD4D25A301F0005883C1 /* Request.m */; };
 		EE9DBD5825A3037E005883C1 /* MNHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9DBD5725A3037E005883C1 /* MNHTTP.m */; };
 		EE9DBD5E25A30429005883C1 /* MNSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9DBD5D25A30429005883C1 /* MNSingleton.m */; };
+		EEA6548A25BC117500D06420 /* LMZLog.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA6548925BC117500D06420 /* LMZLog.m */; };
+		EEA6549125BC161800D06420 /* LMZSandBoxFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA6549025BC161800D06420 /* LMZSandBoxFileManager.m */; };
 		EECC469625A2E34C007647BE /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECC469425A2E34C007647BE /* libmp3lame.a */; };
 		EEDBC71125BAD399009B3863 /* LMZRailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDBC70F25BAD399009B3863 /* LMZRailCell.m */; };
 		EEDBC71225BAD399009B3863 /* LMZRailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEDBC71025BAD399009B3863 /* LMZRailCell.xib */; };
@@ -126,6 +128,10 @@
 		EE9DBD5725A3037E005883C1 /* MNHTTP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNHTTP.m; sourceTree = "<group>"; };
 		EE9DBD5C25A30429005883C1 /* MNSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNSingleton.h; sourceTree = "<group>"; };
 		EE9DBD5D25A30429005883C1 /* MNSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNSingleton.m; sourceTree = "<group>"; };
+		EEA6548825BC117500D06420 /* LMZLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZLog.h; sourceTree = "<group>"; };
+		EEA6548925BC117500D06420 /* LMZLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZLog.m; sourceTree = "<group>"; };
+		EEA6548F25BC161800D06420 /* LMZSandBoxFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZSandBoxFileManager.h; sourceTree = "<group>"; };
+		EEA6549025BC161800D06420 /* LMZSandBoxFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZSandBoxFileManager.m; sourceTree = "<group>"; };
 		EECC469425A2E34C007647BE /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		EECC469525A2E34C007647BE /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		EEDBC70E25BAD399009B3863 /* LMZRailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZRailCell.h; sourceTree = "<group>"; };
@@ -313,6 +319,8 @@
 				EE9DBD4C25A301F0005883C1 /* Request */,
 				A5433DB0259B577B00582E07 /* Video */,
 				A5433DB4259B57FD00582E07 /* Audio */,
+				EEA6548725BC10F500D06420 /* Log */,
+				EEA6548E25BC15F500D06420 /* LMZSandBoxFileManager */,
 				A5433DA7259B4A5A00582E07 /* CollectionCell */,
 				EE8C87FA2531AECE0069B01E /* Main.storyboard */,
 				EE8C87FD2531AECE0069B01E /* Assets.xcassets */,
@@ -352,6 +360,24 @@
 				EE9DBD5D25A30429005883C1 /* MNSingleton.m */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		EEA6548725BC10F500D06420 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6548825BC117500D06420 /* LMZLog.h */,
+				EEA6548925BC117500D06420 /* LMZLog.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		EEA6548E25BC15F500D06420 /* LMZSandBoxFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6548F25BC161800D06420 /* LMZSandBoxFileManager.h */,
+				EEA6549025BC161800D06420 /* LMZSandBoxFileManager.m */,
+			);
+			path = LMZSandBoxFileManager;
 			sourceTree = "<group>";
 		};
 		EECC469225A2E32D007647BE /* Vendors */ = {
@@ -607,7 +633,9 @@
 				EE8C87F62531AECE0069B01E /* SceneDelegate.m in Sources */,
 				EE9DBD4F25A301F0005883C1 /* Request.m in Sources */,
 				A5B10FF8259D6C7900AC8B38 /* LMZAudioPlayer.m in Sources */,
+				EEA6548A25BC117500D06420 /* LMZLog.m in Sources */,
 				A5B10FD5259C6B9300AC8B38 /* LMZVideoAVPlayer.m in Sources */,
+				EEA6549125BC161800D06420 /* LMZSandBoxFileManager.m in Sources */,
 				A5F75D9D259D7AD90056E382 /* AudioViewController.m in Sources */,
 				EEF2497925BACAE200687DDB /* EditTailView.m in Sources */,
 				A5433DAB259B4AC200582E07 /* FunctionCell.m in Sources */,

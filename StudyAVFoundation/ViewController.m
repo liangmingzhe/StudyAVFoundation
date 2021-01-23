@@ -10,6 +10,9 @@
 #import "VideoViewController.h"
 #import "AudioViewController.h"
 #import "LMZAudioViewController.h"
+#import "LMZSandBoxFileManager.h"
+
+
 #define kFunctionCellID @"FunctionCell"
 #define kWidth   [UIScreen mainScreen].bounds.size.width
 #define kHeight  [UIScreen mainScreen].bounds.size.height
@@ -26,6 +29,11 @@
     // Do any additional setup after loading the view.
     [self setupData];
     [self setupUI];
+    NSArray<LMZFileModel *> *file = [LMZSandBoxFileManager seekFileWithTargetDirPath:@"" fileType:@"mp3"];
+    NSLog(@"%@",file);
+    [LMZSandBoxFileManager modifyFileNameWithFilePath:file[0].filePath newName:@"王母娘娘" actionBlock:^(int state, LMZFileModel * _Nullable fileModel) {
+        NSLog(@"");
+    }];
     
 }
 
@@ -35,7 +43,7 @@
 }
 
 - (void)setupUI {
-    self.title = @"菜单";
+    self.title = @"AVFoundation";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.minimumLineSpacing = 0;
@@ -52,9 +60,10 @@
 
 - (void)setupData {
     itemArray = @[
-    @{@"title":@"音频",@"icon":@"audio_play"},
-    @{@"title":@"视频",@"icon":@"video_play"},
-    @{@"title":@"测试",@"icon":@"video_play"}];
+    @{@"title":@"音频",@"icon":@"audio"},
+    @{@"title":@"视频",@"icon":@"video"},
+    @{@"title":@"图片",@"icon":@"image"},
+    @{@"title":@"日志",@"icon":@"txt"}];
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
