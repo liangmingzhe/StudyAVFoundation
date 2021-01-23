@@ -11,7 +11,7 @@
 #import "LMZAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 
-#import "MNHTTP.h"
+//#import "MNHTTP.h"
 
 @interface AudioViewController ()<AudioDelegate,LMZRecorderDelegate> {
     AVURLAsset        *audioAsset;    //音频信息
@@ -153,29 +153,29 @@
     [self.view addSubview:delbtn];
 }
 - (void)loginHandle {
-    [MNHTTP loginWithUser:@"17681888581" pwd:@"111111a" block:^(id  _Nonnull dic) {NSLog(@"登录");}];
+//    [MNHTTP loginWithUser:@"17681888581" pwd:@"111111a" block:^(id  _Nonnull dic) {NSLog(@"登录");}];
 }
 
 - (void)uploadHandle {
-    [MNHTTP uploadMp3File:self.filePathLabel.text block:^(id  _Nonnull dic) {
-        NSLog(@"%@",dic);
-    }];
+//    [MNHTTP uploadMp3File:self.filePathLabel.text block:^(id  _Nonnull dic) {
+//        NSLog(@"%@",dic);
+//    }];
 }
 - (void)checkHandle {
-    [MNHTTP fetchMp3List:^(id  _Nonnull dic) {
-        NSLog(@"");
-    }];
+//    [MNHTTP fetchMp3List:^(id  _Nonnull dic) {
+//        NSLog(@"");
+//    }];
 }
 - (void)setHandle {
-    [MNHTTP setToneWithSN:@"MDAhAQEAbGUwMDUzMDAwMDI1YQAA" block:^(id  _Nonnull dic) {
-        NSLog(@"");
-    }];
+//    [MNHTTP setToneWithSN:@"MDAhAQEAbGUwMDUzMDAwMDI1YQAA" block:^(id  _Nonnull dic) {
+//        NSLog(@"");
+//    }];
 }
 
 - (void)delHandle {
-    [MNHTTP deleteToneWithIds:@[@(1346078971320790016)] block:^(id  _Nonnull dic) {
-        NSLog(@"delete - %@",dic);
-    }];
+//    [MNHTTP deleteToneWithIds:@[@(1346078971320790016)] block:^(id  _Nonnull dic) {
+//        NSLog(@"delete - %@",dic);
+//    }];
 }
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];

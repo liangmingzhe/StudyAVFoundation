@@ -30,6 +30,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <color key="backgroundColor" red="0.058823529411764705" green="0.059086993336677551" blue="0.059086993336677551" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="307" y="125"/>
         </tableViewCell>
     </objects>

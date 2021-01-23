@@ -34,6 +34,7 @@
         self.timeLabel.layer.position = CGPointMake(0, 1);
         self.timeLabel.backgroundColor = [UIColor lightGrayColor];
         [self addSubview:self.timeLabel];
+        [self.timeLabel setHidden:YES];
     }
     return self;
 }

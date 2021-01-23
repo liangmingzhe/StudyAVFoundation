@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="701" height="243"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pps-TG-4nW">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pps-TG-4nW" customClass="RootScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="701" height="243"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7M-WB-FxB">
@@ -41,12 +41,12 @@
                                         <constraint firstItem="gsy-Jz-CM5" firstAttribute="centerY" secondItem="3Kb-1f-MsF" secondAttribute="centerY" id="aHk-UD-JNK"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Unz-rv-MwR" customClass="EditMiddleView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Unz-rv-MwR" customClass="EditMiddleView" customModule="StudyAVFoundation" customModuleProvider="target">
                                     <rect key="frame" x="200" y="0.0" width="300" height="243"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOV-TU-DBU">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="97"/>
-                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,11 +128,13 @@
                 <outlet property="headViewWidthConstraint" destination="DbL-uM-AZz" id="NTN-UC-I6Z"/>
                 <outlet property="headerView" destination="3Kb-1f-MsF" id="g5T-p0-tSD"/>
                 <outlet property="middleView" destination="Unz-rv-MwR" id="s1H-S2-xq8"/>
+                <outlet property="rootScrollView" destination="pps-TG-4nW" id="sZX-L8-1zS"/>
                 <outlet property="tailView" destination="cv9-oa-rkg" id="hNZ-cC-mdm"/>
                 <outlet property="tailViewWidthConstraint" destination="O9a-Vx-ARA" id="eWc-Wr-ytS"/>
+                <outlet property="videoBar" destination="tOV-TU-DBU" id="MZ8-lh-gPx"/>
                 <outlet property="widthConstraint" destination="j4d-Qb-yS6" id="hoB-AG-KL2"/>
             </connections>
-            <point key="canvasLocation" x="-3673" y="-1075"/>
+            <point key="canvasLocation" x="-3673.188405797102" y="-1075.1116071428571"/>
         </view>
     </objects>
     <resources>

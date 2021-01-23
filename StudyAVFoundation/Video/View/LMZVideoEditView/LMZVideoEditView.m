@@ -6,19 +6,11 @@
 //
 
 #import "LMZVideoEditView.h"
-#import "EditHeadView.h"
-#import "EditMiddleView.h"
-#import "EditTailView.h"
-#import "LMZRailCell.h"
 #import <Masonry/Masonry.h>
 #define kLMZRailCell @"LMZRailCell"
-@interface LMZVideoEditView()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet EditHeadView *headerView;
-@property (weak, nonatomic) IBOutlet EditMiddleView *middleView;
-@property (weak, nonatomic) IBOutlet EditTailView *tailView;
+@interface LMZVideoEditView()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
-
-@property (strong, nonatomic) UITableView *railTableView;
+@property (weak, nonatomic) IBOutlet RootScrollView *rootScrollView;
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewWidthConstraint;
@@ -32,18 +24,20 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    self.railTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
-    [self.railTableView registerNib:[UINib nibWithNibName:NSStringFromClass([LMZRailCell class]) bundle:nil] forCellReuseIdentifier:kLMZRailCell];
-    [self addSubview:self.railTableView];
+    
+    _rootScrollView.delegate = self;
+    self.railTableView = [[RailTableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
+    self.railTableView.delegate = self;
+    self.railTableView.dataSource = self;
+    [self.railTableView registerNib:[UINib nibWithNibName:@"LMZRailCell" bundle:nil] forCellReuseIdentifier:kLMZRailCell];
+    [self.rootScrollView addSubview:self.railTableView];
     
     [self.railTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headerView.mas_right);
         make.right.equalTo(self.tailView.mas_left);
         make.bottom.equalTo(self);
-//        make.top.equalTo();
+        make.top.equalTo(self.videoBar.mas_bottom);
     }];
-    self.railTableView.delegate = self;
-    self.railTableView.dataSource = self;
     [self.railTableView reloadData];
     
 
@@ -55,31 +49,49 @@
         self.headViewWidthConstraint.constant = [UIScreen mainScreen].bounds.size.width*0.5;
         self.tailViewWidthConstraint.constant = [UIScreen mainScreen].bounds.size.width*0.5;
         self.widthConstraint.constant = self.headViewWidthConstraint.constant + self.tailViewWidthConstraint.constant + [UIScreen mainScreen].bounds.size.width;
-        
-
     }
     return self;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGPoint point = [scrollView contentOffset];
+
+    NSLog(@"");
+
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    
+}
+
+
+
+#pragma mark ========== tableView 代理 ==========
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LMZRailCell *cell = [tableView dequeueReusableCellWithIdentifier:kLMZRailCell];
     if (cell == nil) {
-        cell = [[LMZRailCell alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 10)];
-        cell.backgroundColor = [UIColor redColor];
+        
     }
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 10;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
 @end
