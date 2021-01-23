@@ -36,9 +36,6 @@
 		EE8C88042531AECE0069B01E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C88032531AECE0069B01E /* main.m */; };
 		EE8C880E2531AECF0069B01E /* StudyAVFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C880D2531AECF0069B01E /* StudyAVFoundationTests.m */; };
 		EE8C88192531AECF0069B01E /* StudyAVFoundationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8C88182531AECF0069B01E /* StudyAVFoundationUITests.m */; };
-		EE9DBD4F25A301F0005883C1 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9DBD4D25A301F0005883C1 /* Request.m */; };
-		EE9DBD5825A3037E005883C1 /* MNHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9DBD5725A3037E005883C1 /* MNHTTP.m */; };
-		EE9DBD5E25A30429005883C1 /* MNSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9DBD5D25A30429005883C1 /* MNSingleton.m */; };
 		EEA6548A25BC117500D06420 /* LMZLog.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA6548925BC117500D06420 /* LMZLog.m */; };
 		EEA6549125BC161800D06420 /* LMZSandBoxFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA6549025BC161800D06420 /* LMZSandBoxFileManager.m */; };
 		EECC469625A2E34C007647BE /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECC469425A2E34C007647BE /* libmp3lame.a */; };
@@ -122,12 +119,6 @@
 		EE8C88142531AECF0069B01E /* StudyAVFoundationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyAVFoundationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8C88182531AECF0069B01E /* StudyAVFoundationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyAVFoundationUITests.m; sourceTree = "<group>"; };
 		EE8C881A2531AECF0069B01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE9DBD4D25A301F0005883C1 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
-		EE9DBD4E25A301F0005883C1 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
-		EE9DBD5625A3037E005883C1 /* MNHTTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNHTTP.h; sourceTree = "<group>"; };
-		EE9DBD5725A3037E005883C1 /* MNHTTP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNHTTP.m; sourceTree = "<group>"; };
-		EE9DBD5C25A30429005883C1 /* MNSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNSingleton.h; sourceTree = "<group>"; };
-		EE9DBD5D25A30429005883C1 /* MNSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNSingleton.m; sourceTree = "<group>"; };
 		EEA6548825BC117500D06420 /* LMZLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZLog.h; sourceTree = "<group>"; };
 		EEA6548925BC117500D06420 /* LMZLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZLog.m; sourceTree = "<group>"; };
 		EEA6548F25BC161800D06420 /* LMZSandBoxFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZSandBoxFileManager.h; sourceTree = "<group>"; };
@@ -316,7 +307,6 @@
 				EE8C87F82531AECE0069B01E /* ViewController.m */,
 				A5B10FD9259C6CE900AC8B38 /* BaseViewController.h */,
 				A5B10FDA259C6CEA00AC8B38 /* BaseViewController.m */,
-				EE9DBD4C25A301F0005883C1 /* Request */,
 				A5433DB0259B577B00582E07 /* Video */,
 				A5433DB4259B57FD00582E07 /* Audio */,
 				EEA6548725BC10F500D06420 /* Log */,
@@ -347,19 +337,6 @@
 				EE8C881A2531AECF0069B01E /* Info.plist */,
 			);
 			path = StudyAVFoundationUITests;
-			sourceTree = "<group>";
-		};
-		EE9DBD4C25A301F0005883C1 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				EE9DBD4D25A301F0005883C1 /* Request.m */,
-				EE9DBD4E25A301F0005883C1 /* Request.h */,
-				EE9DBD5625A3037E005883C1 /* MNHTTP.h */,
-				EE9DBD5725A3037E005883C1 /* MNHTTP.m */,
-				EE9DBD5C25A30429005883C1 /* MNSingleton.h */,
-				EE9DBD5D25A30429005883C1 /* MNSingleton.m */,
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		EEA6548725BC10F500D06420 /* Log */ = {
@@ -620,18 +597,15 @@
 				EEF2497625BACAE200687DDB /* LMZVideoEditView.m in Sources */,
 				EEF2497525BACAE200687DDB /* EditHeadView.m in Sources */,
 				A5F614F025A749CA00882DF8 /* LMZAudioCell.m in Sources */,
-				EE9DBD5825A3037E005883C1 /* MNHTTP.m in Sources */,
 				EE8C87F32531AECE0069B01E /* AppDelegate.m in Sources */,
 				EEF2497725BACAE200687DDB /* EditMiddleView.m in Sources */,
 				A5B10FE2259D612B00AC8B38 /* LMZVoiceRecorder.m in Sources */,
 				A5433DBB259B5B0900582E07 /* VideoViewController.m in Sources */,
-				EE9DBD5E25A30429005883C1 /* MNSingleton.m in Sources */,
 				EE0743CB25A7082500069232 /* LMZAudioViewController.m in Sources */,
 				A5F7A72D25A1C20E0072DEC4 /* AudioFileListViewController.m in Sources */,
 				EE8C88042531AECE0069B01E /* main.m in Sources */,
 				EE07440425A7F79800069232 /* LMZRoundButton.m in Sources */,
 				EE8C87F62531AECE0069B01E /* SceneDelegate.m in Sources */,
-				EE9DBD4F25A301F0005883C1 /* Request.m in Sources */,
 				A5B10FF8259D6C7900AC8B38 /* LMZAudioPlayer.m in Sources */,
 				EEA6548A25BC117500D06420 /* LMZLog.m in Sources */,
 				A5B10FD5259C6B9300AC8B38 /* LMZVideoAVPlayer.m in Sources */,
