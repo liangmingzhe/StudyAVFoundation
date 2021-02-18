@@ -91,6 +91,9 @@
         [self.timer invalidate];
         self.timer = nil;
     }
+    if ([self.delegate respondsToSelector:@selector(playerDidFinishPlaying:successfully:)]) {
+        [self.delegate playerDidFinishPlaying:self successfully:flag];
+    }
 }
 
 

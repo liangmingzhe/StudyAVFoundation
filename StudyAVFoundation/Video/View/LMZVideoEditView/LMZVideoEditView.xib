@@ -8,13 +8,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LMZVideoEditView">
+            <connections>
+                <outlet property="headViewWidthConstraint" destination="DbL-uM-AZz" id="bzb-2D-Skj"/>
+                <outlet property="headerView" destination="3Kb-1f-MsF" id="pDO-I6-GaB"/>
+                <outlet property="middleView" destination="Unz-rv-MwR" id="yIz-nL-NE1"/>
+                <outlet property="railTableView" destination="N6C-n4-hFA" id="Iz7-iO-Kfw"/>
+                <outlet property="rootScrollView" destination="pps-TG-4nW" id="DEp-ER-97J"/>
+                <outlet property="tailView" destination="cv9-oa-rkg" id="9uf-QE-XIi"/>
+                <outlet property="tailViewWidthConstraint" destination="O9a-Vx-ARA" id="Fhq-8v-ZS1"/>
+                <outlet property="videoBar" destination="tOV-TU-DBU" id="5sp-sX-1po"/>
+                <outlet property="view" destination="chF-iX-5Bl" id="ucJ-Ql-7TF"/>
+                <outlet property="widthConstraint" destination="j4d-Qb-yS6" id="ylX-Ll-nWL"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="chF-iX-5Bl" customClass="LMZVideoEditView">
+        <view contentMode="scaleToFill" id="chF-iX-5Bl">
             <rect key="frame" x="0.0" y="0.0" width="701" height="243"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pps-TG-4nW" customClass="RootScrollView">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pps-TG-4nW">
                     <rect key="frame" x="0.0" y="0.0" width="701" height="243"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7M-WB-FxB">
@@ -48,12 +61,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="97"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N6C-n4-hFA">
+                                            <rect key="frame" x="0.0" y="97" width="300" height="146"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="-1" id="fOF-oj-Wb5"/>
+                                                <outlet property="delegate" destination="-1" id="ahI-gF-4Rn"/>
+                                            </connections>
+                                        </tableView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="N6C-n4-hFA" secondAttribute="bottom" id="SW3-Fh-AbX"/>
+                                        <constraint firstAttribute="trailing" secondItem="N6C-n4-hFA" secondAttribute="trailing" id="Y0H-7Q-J3n"/>
                                         <constraint firstItem="tOV-TU-DBU" firstAttribute="height" secondItem="Unz-rv-MwR" secondAttribute="height" multiplier="0.399177" id="ZD6-EG-Utb"/>
+                                        <constraint firstItem="N6C-n4-hFA" firstAttribute="leading" secondItem="Unz-rv-MwR" secondAttribute="leading" id="aRs-tU-fM5"/>
                                         <constraint firstAttribute="trailing" secondItem="tOV-TU-DBU" secondAttribute="trailing" id="amu-rZ-9oK"/>
                                         <constraint firstItem="tOV-TU-DBU" firstAttribute="leading" secondItem="Unz-rv-MwR" secondAttribute="leading" id="eMc-Z2-2nD"/>
+                                        <constraint firstItem="N6C-n4-hFA" firstAttribute="top" secondItem="tOV-TU-DBU" secondAttribute="bottom" id="jSq-o7-iH9"/>
                                         <constraint firstItem="tOV-TU-DBU" firstAttribute="top" secondItem="Unz-rv-MwR" secondAttribute="top" id="qIg-2Z-z38"/>
                                     </constraints>
                                 </view>
@@ -104,6 +129,9 @@
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="NZO-Ha-cOn"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="Dd8-ZI-bwC"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="aUb-1q-kzy"/>
+                    </connections>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQQ-8O-RtI">
                     <rect key="frame" x="349.5" y="5" width="2" height="233"/>
@@ -124,17 +152,7 @@
                 <constraint firstAttribute="bottom" secondItem="pps-TG-4nW" secondAttribute="bottom" id="xNy-Wc-3kN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="headViewWidthConstraint" destination="DbL-uM-AZz" id="NTN-UC-I6Z"/>
-                <outlet property="headerView" destination="3Kb-1f-MsF" id="g5T-p0-tSD"/>
-                <outlet property="middleView" destination="Unz-rv-MwR" id="s1H-S2-xq8"/>
-                <outlet property="rootScrollView" destination="pps-TG-4nW" id="sZX-L8-1zS"/>
-                <outlet property="tailView" destination="cv9-oa-rkg" id="hNZ-cC-mdm"/>
-                <outlet property="tailViewWidthConstraint" destination="O9a-Vx-ARA" id="eWc-Wr-ytS"/>
-                <outlet property="videoBar" destination="tOV-TU-DBU" id="MZ8-lh-gPx"/>
-                <outlet property="widthConstraint" destination="j4d-Qb-yS6" id="hoB-AG-KL2"/>
-            </connections>
-            <point key="canvasLocation" x="-3673.188405797102" y="-1075.1116071428571"/>
+            <point key="canvasLocation" x="-3407" y="-1102"/>
         </view>
     </objects>
     <resources>

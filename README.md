@@ -19,4 +19,8 @@
 ### 2.视频剪辑
     功能:视频截取
 
+
+## VideoToolBox
+### 硬编解码H.264/H.265
+
 ## AVFoundation梳理

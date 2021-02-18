@@ -8,15 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		3D328CD4B63B2C658181DFE5 /* Pods_StudyAVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5CE5A3A2C6F54E791DBEBA /* Pods_StudyAVFoundation.framework */; };
+		A51CE5A925C26B13005BB1A4 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51CE5A825C26B13005BB1A4 /* GLKit.framework */; };
+		A51CE5B425C27A49005BB1A4 /* dolaameng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A51CE5B325C27A49005BB1A4 /* dolaameng.jpg */; };
+		A51CE5D325C28002005BB1A4 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A51CE5D025C28002005BB1A4 /* Shaders.metal */; };
+		A51CE5D425C28002005BB1A4 /* MetalPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A51CE5D225C28002005BB1A4 /* MetalPlayer.m */; };
+		A51CE5DA25C2841B005BB1A4 /* OpenGLESPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51CE5D925C2841B005BB1A4 /* OpenGLESPlayerView.m */; };
+		A53BD0F425BFB37D00D386DE /* LMZVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A53BD0F325BFB37D00D386DE /* LMZVideoEncoder.m */; };
+		A53BD10325C0378100D386DE /* LMZVideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A53BD10225C0378100D386DE /* LMZVideoDecoder.m */; };
+		A53FA0C125BDD4C800ED5380 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A53FA0C025BDD4C800ED5380 /* README.md */; };
 		A5433DAB259B4AC200582E07 /* FunctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5433DA9259B4AC200582E07 /* FunctionCell.m */; };
 		A5433DAC259B4AC200582E07 /* FunctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5433DAA259B4AC200582E07 /* FunctionCell.xib */; };
 		A5433DBB259B5B0900582E07 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5433DB9259B5B0900582E07 /* VideoViewController.m */; };
 		A5433DBC259B5B0900582E07 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5433DBA259B5B0900582E07 /* VideoViewController.xib */; };
+		A545098925BED7B000CE2734 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A545098825BED7B000CE2734 /* AVFoundation.framework */; };
 		A592EB0C25B88AE500615173 /* LMZVideoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A592EB0B25B88AE500615173 /* LMZVideoProgressView.m */; };
+		A5AD78E725BECB75003DFC51 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AD78E525BECB75003DFC51 /* CameraViewController.m */; };
+		A5AD78E825BECB75003DFC51 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5AD78E625BECB75003DFC51 /* CameraViewController.xib */; };
+		A5AD78EE25BED634003DFC51 /* LMZCameraCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AD78ED25BED634003DFC51 /* LMZCameraCapture.m */; };
 		A5B10FD5259C6B9300AC8B38 /* LMZVideoAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FD3259C6B9300AC8B38 /* LMZVideoAVPlayer.m */; };
 		A5B10FDB259C6CEA00AC8B38 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FDA259C6CEA00AC8B38 /* BaseViewController.m */; };
 		A5B10FE2259D612B00AC8B38 /* LMZVoiceRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FE1259D612B00AC8B38 /* LMZVoiceRecorder.m */; };
 		A5B10FF8259D6C7900AC8B38 /* LMZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B10FF7259D6C7900AC8B38 /* LMZAudioPlayer.m */; };
+		A5CB651925D50B88009F43F9 /* LMZAudioInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CB651825D50B88009F43F9 /* LMZAudioInfo.m */; };
+		A5D8715025D4F79700B1F73C /* LMZDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D8714F25D4F79700B1F73C /* LMZDateManager.m */; };
 		A5F614F025A749CA00882DF8 /* LMZAudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F614EE25A749CA00882DF8 /* LMZAudioCell.m */; };
 		A5F614F125A749CA00882DF8 /* LMZAudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F614EF25A749CA00882DF8 /* LMZAudioCell.xib */; };
 		A5F614FC25A754A300882DF8 /* LMZAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F614FB25A754A300882DF8 /* LMZAudioViewController.xib */; };
@@ -66,14 +80,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A51CE5A825C26B13005BB1A4 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		A51CE5B325C27A49005BB1A4 /* dolaameng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dolaameng.jpg; sourceTree = "<group>"; };
+		A51CE5D025C28002005BB1A4 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		A51CE5D125C28002005BB1A4 /* MetalPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalPlayer.h; sourceTree = "<group>"; };
+		A51CE5D225C28002005BB1A4 /* MetalPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetalPlayer.m; sourceTree = "<group>"; };
+		A51CE5D825C2841B005BB1A4 /* OpenGLESPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLESPlayerView.h; sourceTree = "<group>"; };
+		A51CE5D925C2841B005BB1A4 /* OpenGLESPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLESPlayerView.m; sourceTree = "<group>"; };
+		A53BD0F225BFB37D00D386DE /* LMZVideoEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZVideoEncoder.h; sourceTree = "<group>"; };
+		A53BD0F325BFB37D00D386DE /* LMZVideoEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZVideoEncoder.m; sourceTree = "<group>"; };
+		A53BD10125C0378100D386DE /* LMZVideoDecoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZVideoDecoder.h; sourceTree = "<group>"; };
+		A53BD10225C0378100D386DE /* LMZVideoDecoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZVideoDecoder.m; sourceTree = "<group>"; };
+		A53FA0C025BDD4C800ED5380 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A5433DA8259B4AC200582E07 /* FunctionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionCell.h; sourceTree = "<group>"; };
 		A5433DA9259B4AC200582E07 /* FunctionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionCell.m; sourceTree = "<group>"; };
 		A5433DAA259B4AC200582E07 /* FunctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FunctionCell.xib; sourceTree = "<group>"; };
 		A5433DB8259B5B0900582E07 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		A5433DB9259B5B0900582E07 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		A5433DBA259B5B0900582E07 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		A545098825BED7B000CE2734 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A592EB0A25B88AE500615173 /* LMZVideoProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZVideoProgressView.h; sourceTree = "<group>"; };
 		A592EB0B25B88AE500615173 /* LMZVideoProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZVideoProgressView.m; sourceTree = "<group>"; };
+		A5AD78E425BECB75003DFC51 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		A5AD78E525BECB75003DFC51 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		A5AD78E625BECB75003DFC51 /* CameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
+		A5AD78EC25BED634003DFC51 /* LMZCameraCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZCameraCapture.h; sourceTree = "<group>"; };
+		A5AD78ED25BED634003DFC51 /* LMZCameraCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZCameraCapture.m; sourceTree = "<group>"; };
 		A5B10FD3259C6B9300AC8B38 /* LMZVideoAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMZVideoAVPlayer.m; sourceTree = "<group>"; };
 		A5B10FD4259C6B9300AC8B38 /* LMZVideoAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMZVideoAVPlayer.h; sourceTree = "<group>"; };
 		A5B10FD9259C6CE900AC8B38 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -82,6 +114,11 @@
 		A5B10FE1259D612B00AC8B38 /* LMZVoiceRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZVoiceRecorder.m; sourceTree = "<group>"; };
 		A5B10FF6259D6C7900AC8B38 /* LMZAudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZAudioPlayer.h; sourceTree = "<group>"; };
 		A5B10FF7259D6C7900AC8B38 /* LMZAudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZAudioPlayer.m; sourceTree = "<group>"; };
+		A5CB651725D50B88009F43F9 /* LMZAudioInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZAudioInfo.h; sourceTree = "<group>"; };
+		A5CB651825D50B88009F43F9 /* LMZAudioInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZAudioInfo.m; sourceTree = "<group>"; };
+		A5D8714E25D4F79700B1F73C /* LMZDateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZDateManager.h; sourceTree = "<group>"; };
+		A5D8714F25D4F79700B1F73C /* LMZDateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZDateManager.m; sourceTree = "<group>"; };
+		A5D8715425D4F89C00B1F73C /* StudyAVFoundation.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyAVFoundation.pch; sourceTree = "<group>"; };
 		A5F614ED25A749CA00882DF8 /* LMZAudioCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMZAudioCell.h; sourceTree = "<group>"; };
 		A5F614EE25A749CA00882DF8 /* LMZAudioCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMZAudioCell.m; sourceTree = "<group>"; };
 		A5F614EF25A749CA00882DF8 /* LMZAudioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LMZAudioCell.xib; sourceTree = "<group>"; };
@@ -144,6 +181,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51CE5A925C26B13005BB1A4 /* GLKit.framework in Frameworks */,
+				A545098925BED7B000CE2734 /* AVFoundation.framework in Frameworks */,
 				3D328CD4B63B2C658181DFE5 /* Pods_StudyAVFoundation.framework in Frameworks */,
 				EECC469625A2E34C007647BE /* libmp3lame.a in Frameworks */,
 			);
@@ -175,6 +214,59 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A51CE59A25C26A7A005BB1A4 /* 硬编码 */ = {
+			isa = PBXGroup;
+			children = (
+				A53BD0F225BFB37D00D386DE /* LMZVideoEncoder.h */,
+				A53BD0F325BFB37D00D386DE /* LMZVideoEncoder.m */,
+			);
+			path = "硬编码";
+			sourceTree = "<group>";
+		};
+		A51CE59B25C26A88005BB1A4 /* 硬解码 */ = {
+			isa = PBXGroup;
+			children = (
+				A53BD10125C0378100D386DE /* LMZVideoDecoder.h */,
+				A53BD10225C0378100D386DE /* LMZVideoDecoder.m */,
+			);
+			path = "硬解码";
+			sourceTree = "<group>";
+		};
+		A51CE59C25C26A9B005BB1A4 /* 获取摄像机数据 */ = {
+			isa = PBXGroup;
+			children = (
+				A5AD78EC25BED634003DFC51 /* LMZCameraCapture.h */,
+				A5AD78ED25BED634003DFC51 /* LMZCameraCapture.m */,
+			);
+			path = "获取摄像机数据";
+			sourceTree = "<group>";
+		};
+		A51CE59D25C26ABE005BB1A4 /* OpenGLES渲染 */ = {
+			isa = PBXGroup;
+			children = (
+				A51CE5D825C2841B005BB1A4 /* OpenGLESPlayerView.h */,
+				A51CE5D925C2841B005BB1A4 /* OpenGLESPlayerView.m */,
+				A51CE5D125C28002005BB1A4 /* MetalPlayer.h */,
+				A51CE5D225C28002005BB1A4 /* MetalPlayer.m */,
+				A51CE5D025C28002005BB1A4 /* Shaders.metal */,
+			);
+			path = "OpenGLES渲染";
+			sourceTree = "<group>";
+		};
+		A53FA0C525BDD66600ED5380 /* 音视频编解码 */ = {
+			isa = PBXGroup;
+			children = (
+				A5AD78E425BECB75003DFC51 /* CameraViewController.h */,
+				A5AD78E525BECB75003DFC51 /* CameraViewController.m */,
+				A5AD78E625BECB75003DFC51 /* CameraViewController.xib */,
+				A51CE59D25C26ABE005BB1A4 /* OpenGLES渲染 */,
+				A51CE59C25C26A9B005BB1A4 /* 获取摄像机数据 */,
+				A51CE59B25C26A88005BB1A4 /* 硬解码 */,
+				A51CE59A25C26A7A005BB1A4 /* 硬编码 */,
+			);
+			path = "音视频编解码";
+			sourceTree = "<group>";
+		};
 		A5433DA7259B4A5A00582E07 /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +294,7 @@
 				EE0743C825A707EC00069232 /* LMZAudioViewController */,
 				A5F75D9A259D7AD90056E382 /* AudioViewController.h */,
 				A5F75D9B259D7AD90056E382 /* AudioViewController.m */,
+				A5D8715C25D5037300B1F73C /* LMZAVMetaDataItem */,
 				A5F75D9C259D7AD90056E382 /* AudioViewController.xib */,
 				A5F7A72B25A1C20E0072DEC4 /* AudioFileListViewController.h */,
 				A5F7A72C25A1C20E0072DEC4 /* AudioFileListViewController.m */,
@@ -238,6 +331,34 @@
 			path = LMZAudioPlayer;
 			sourceTree = "<group>";
 		};
+		A5D8714C25D4F74C00B1F73C /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				A5D8714D25D4F77300B1F73C /* LMZDateManager */,
+				EEA6548725BC10F500D06420 /* Log */,
+				EEA6548E25BC15F500D06420 /* LMZSandBoxFileManager */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		A5D8714D25D4F77300B1F73C /* LMZDateManager */ = {
+			isa = PBXGroup;
+			children = (
+				A5D8714E25D4F79700B1F73C /* LMZDateManager.h */,
+				A5D8714F25D4F79700B1F73C /* LMZDateManager.m */,
+			);
+			path = LMZDateManager;
+			sourceTree = "<group>";
+		};
+		A5D8715C25D5037300B1F73C /* LMZAVMetaDataItem */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB651725D50B88009F43F9 /* LMZAudioInfo.h */,
+				A5CB651825D50B88009F43F9 /* LMZAudioInfo.m */,
+			);
+			path = LMZAVMetaDataItem;
+			sourceTree = "<group>";
+		};
 		A5F614EC25A7499200882DF8 /* LMZAudioCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +372,8 @@
 		E4F92E1E193E48F461E85F8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A51CE5A825C26B13005BB1A4 /* GLKit.framework */,
+				A545098825BED7B000CE2734 /* AVFoundation.framework */,
 				DF5CE5A3A2C6F54E791DBEBA /* Pods_StudyAVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -275,6 +398,8 @@
 		EE8C87E52531AECE0069B01E = {
 			isa = PBXGroup;
 			children = (
+				A5D8715425D4F89C00B1F73C /* StudyAVFoundation.pch */,
+				A53FA0C025BDD4C800ED5380 /* README.md */,
 				EE8C87F02531AECE0069B01E /* StudyAVFoundation */,
 				EE8C880C2531AECF0069B01E /* StudyAVFoundationTests */,
 				EE8C88172531AECF0069B01E /* StudyAVFoundationUITests */,
@@ -297,8 +422,6 @@
 		EE8C87F02531AECE0069B01E /* StudyAVFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				EECC469A25A2E393007647BE /* LMZPlayer */,
-				EECC469225A2E32D007647BE /* Vendors */,
 				EE8C87F12531AECE0069B01E /* AppDelegate.h */,
 				EE8C87F22531AECE0069B01E /* AppDelegate.m */,
 				EE8C87F42531AECE0069B01E /* SceneDelegate.h */,
@@ -307,13 +430,16 @@
 				EE8C87F82531AECE0069B01E /* ViewController.m */,
 				A5B10FD9259C6CE900AC8B38 /* BaseViewController.h */,
 				A5B10FDA259C6CEA00AC8B38 /* BaseViewController.m */,
+				EECC469A25A2E393007647BE /* LMZPlayer */,
 				A5433DB0259B577B00582E07 /* Video */,
 				A5433DB4259B57FD00582E07 /* Audio */,
-				EEA6548725BC10F500D06420 /* Log */,
-				EEA6548E25BC15F500D06420 /* LMZSandBoxFileManager */,
+				A53FA0C525BDD66600ED5380 /* 音视频编解码 */,
 				A5433DA7259B4A5A00582E07 /* CollectionCell */,
+				A5D8714C25D4F74C00B1F73C /* Widget */,
+				EECC469225A2E32D007647BE /* Vendors */,
 				EE8C87FA2531AECE0069B01E /* Main.storyboard */,
 				EE8C87FD2531AECE0069B01E /* Assets.xcassets */,
+				A51CE5B325C27A49005BB1A4 /* dolaameng.jpg */,
 				EE8C87FF2531AECE0069B01E /* LaunchScreen.storyboard */,
 				EE8C88022531AECE0069B01E /* Info.plist */,
 				EE8C88032531AECE0069B01E /* main.m */,
@@ -387,8 +513,8 @@
 		EEF2496B25BACAE200687DDB /* LMZVideoEditView */ = {
 			isa = PBXGroup;
 			children = (
-				EEF2496D25BACAE200687DDB /* LMZVideoEditView.m */,
 				EEF2497025BACAE200687DDB /* LMZVideoEditView.h */,
+				EEF2496D25BACAE200687DDB /* LMZVideoEditView.m */,
 				EEF2497225BACAE200687DDB /* LMZVideoEditView.xib */,
 				EEF2496C25BACAE200687DDB /* EditHeadView.m */,
 				EEF2497125BACAE200687DDB /* EditHeadView.h */,
@@ -521,7 +647,10 @@
 				EE0743F525A7F4A800069232 /* LMZRecordActionView.xib in Resources */,
 				EE8C87FE2531AECE0069B01E /* Assets.xcassets in Resources */,
 				EE8C87FC2531AECE0069B01E /* Main.storyboard in Resources */,
+				A51CE5B425C27A49005BB1A4 /* dolaameng.jpg in Resources */,
+				A53FA0C125BDD4C800ED5380 /* README.md in Resources */,
 				A5F75D9E259D7AD90056E382 /* AudioViewController.xib in Resources */,
+				A5AD78E825BECB75003DFC51 /* CameraViewController.xib in Resources */,
 				A5433DBC259B5B0900582E07 /* VideoViewController.xib in Resources */,
 				A5433DAC259B4AC200582E07 /* FunctionCell.xib in Resources */,
 				EEF2497825BACAE200687DDB /* LMZVideoEditView.xib in Resources */,
@@ -592,6 +721,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51CE5D325C28002005BB1A4 /* Shaders.metal in Sources */,
 				EE8C87F92531AECE0069B01E /* ViewController.m in Sources */,
 				A5B10FDB259C6CEA00AC8B38 /* BaseViewController.m in Sources */,
 				EEF2497625BACAE200687DDB /* LMZVideoEditView.m in Sources */,
@@ -599,15 +729,23 @@
 				A5F614F025A749CA00882DF8 /* LMZAudioCell.m in Sources */,
 				EE8C87F32531AECE0069B01E /* AppDelegate.m in Sources */,
 				EEF2497725BACAE200687DDB /* EditMiddleView.m in Sources */,
+				A5AD78EE25BED634003DFC51 /* LMZCameraCapture.m in Sources */,
+				A53BD0F425BFB37D00D386DE /* LMZVideoEncoder.m in Sources */,
 				A5B10FE2259D612B00AC8B38 /* LMZVoiceRecorder.m in Sources */,
 				A5433DBB259B5B0900582E07 /* VideoViewController.m in Sources */,
 				EE0743CB25A7082500069232 /* LMZAudioViewController.m in Sources */,
+				A53BD10325C0378100D386DE /* LMZVideoDecoder.m in Sources */,
 				A5F7A72D25A1C20E0072DEC4 /* AudioFileListViewController.m in Sources */,
 				EE8C88042531AECE0069B01E /* main.m in Sources */,
 				EE07440425A7F79800069232 /* LMZRoundButton.m in Sources */,
 				EE8C87F62531AECE0069B01E /* SceneDelegate.m in Sources */,
+				A51CE5DA25C2841B005BB1A4 /* OpenGLESPlayerView.m in Sources */,
+				A51CE5D425C28002005BB1A4 /* MetalPlayer.m in Sources */,
+				A5CB651925D50B88009F43F9 /* LMZAudioInfo.m in Sources */,
 				A5B10FF8259D6C7900AC8B38 /* LMZAudioPlayer.m in Sources */,
+				A5AD78E725BECB75003DFC51 /* CameraViewController.m in Sources */,
 				EEA6548A25BC117500D06420 /* LMZLog.m in Sources */,
+				A5D8715025D4F79700B1F73C /* LMZDateManager.m in Sources */,
 				A5B10FD5259C6B9300AC8B38 /* LMZVideoAVPlayer.m in Sources */,
 				EEA6549125BC161800D06420 /* LMZSandBoxFileManager.m in Sources */,
 				A5F75D9D259D7AD90056E382 /* AudioViewController.m in Sources */,
@@ -721,7 +859,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -774,7 +912,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -791,7 +929,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAEG6YPEMR;
 				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/StudyAVFoundation.pch";
 				INFOPLIST_FILE = StudyAVFoundation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -815,7 +955,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAEG6YPEMR;
 				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/StudyAVFoundation.pch";
 				INFOPLIST_FILE = StudyAVFoundation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

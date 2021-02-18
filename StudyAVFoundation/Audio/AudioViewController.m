@@ -10,18 +10,23 @@
 #import "LMZVoiceRecorder.h"
 #import "LMZAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import "LMZAudioInfo.h"
 //#import "MNHTTP.h"
 
 @interface AudioViewController ()<AudioDelegate,LMZRecorderDelegate> {
-    AVURLAsset        *audioAsset;    //音频信息
+
 }
-@property (nonatomic ,strong) LMZVoiceRecorder     *recoder;       //录音器
-@property (nonatomic ,strong) LMZAudioPlayer    *player;        //播放器
+@property (nonatomic ,strong) LMZVoiceRecorder  *recoder;           //录音器
+@property (nonatomic ,strong) LMZAudioPlayer    *audioPlayer;       //播放器
+
+@property (nonatomic ,strong) AVURLAsset        *audioAsset;    //音频信息
+@property (nonatomic ,strong) AVMetadataItem    *audioMetaDataItem;
+@property (nonatomic,strong)  LMZAudioInfo      *audioInfo;  //音频文件信息
+
+@property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (weak, nonatomic) IBOutlet UILabel    *playTime;
-
-
 @property (weak, nonatomic) IBOutlet UILabel *filePathLabel;
+
 @end
 
 @implementation AudioViewController
@@ -33,13 +38,15 @@
     self.title = @"音频";
     self.recoder = [[LMZVoiceRecorder alloc] init];
     self.recoder.delegate = self;
-    self.player  = [[LMZAudioPlayer alloc] init];
-    self.player.delegate = self;
+    
+    self.audioPlayer  = [[LMZAudioPlayer alloc] init];
+    self.audioPlayer.delegate = self;
     self.filePathLabel.text = [self.recoder filePath];
     
-    [self initbtns];
+    self.audioInfo = [[LMZAudioInfo alloc] init];
     
 }
+
 
 - (IBAction)recordWithState:(UIButton *)sender {
     sender.selected = !sender.selected;
@@ -55,17 +62,17 @@
     sender.selected = !sender.selected;
     if(sender.selected == YES) {
         NSString *urlString = self.filePathLabel.text;
-        [self.player playerAudioWithUrl:[NSURL URLWithString:urlString]];
+        [self.audioPlayer playerAudioWithUrl:[NSURL URLWithString:urlString]];
         float durationSeconds = [self durationWithAudio:urlString];
-        self.playTime.text = [NSString stringWithFormat:@"%0.1f/%0.1f",[_player playerCurrentTime],durationSeconds];
+        self.playTime.text = [NSString stringWithFormat:@"%0.1f/%0.1f",[_audioPlayer playerCurrentTime],durationSeconds];
     }else {
-        [self.player stop];
+        [self.audioPlayer stop];
     }
 
 }
 
 - (IBAction)deleteAudio:(id)sender {
-    [self.player stop];
+    [self.audioPlayer stop];
     [self.recoder deleteRecording];
     self.playTime.text = [NSString stringWithFormat:@"0.0s/0.0s"];
 }
@@ -95,7 +102,7 @@
 
 #pragma AudioDelegate
 - (void)playerCurrentTime:(NSTimeInterval)time {
-    self.playTime.text = [NSString stringWithFormat:@"%0.1f/%0.1f",time,[_player playerDuration]];
+    self.playTime.text = [NSString stringWithFormat:@"%0.1f/%0.1f",time,[_audioPlayer playerDuration]];
 }
 
 #pragma LMZRecorderDelegate
@@ -108,79 +115,51 @@
         });
     }
 }
+//播放结束
+- (void)playerDidFinishPlaying:(LMZAudioPlayer *)player successfully:(BOOL)flag {
+    if (flag == YES) {
+        [self.playBtn setSelected:NO];
+    }
+}
+
 - (IBAction)saveAudioFile:(UIButton *)sender {
-    [self.recoder saveWithName:@""];
+    NSString *timeStamp = [LMZDateManager timeStampWithDate:[NSDate date]];
+    [self.recoder saveWithName:timeStamp];
 }
 
 
 //计算音频文件的时长
 - (float)durationWithAudio:(NSString *)audioString{
-    AVURLAsset* audioAsset =[AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath: audioString] options:nil];
-    CMTime audioDuration = audioAsset.duration;
+    self.audioAsset =[AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath: audioString] options:nil];
+    CMTime audioDuration = self.audioAsset.duration;
     float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
     NSLog(@"%f",audioDurationSeconds);
     return audioDurationSeconds;
 }
-- (void)initbtns {
-    UIButton *lgbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2, 100, 30)];
-    [lgbtn setTitle:@"登录" forState:UIControlStateNormal];
-    [lgbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [lgbtn addTarget:self action:@selector(loginHandle) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:lgbtn];
-    
-    UIButton *uplbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2 + 50, 100, 30)];
-    [uplbtn setTitle:@"上传" forState:UIControlStateNormal];
-    [uplbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [uplbtn addTarget:self action:@selector(uploadHandle) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:uplbtn];
-    
-    UIButton *chkbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2 + 100, 100, 30)];
-    [chkbtn setTitle:@"查询" forState:UIControlStateNormal];
-    [chkbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [chkbtn addTarget:self action:@selector(checkHandle) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:chkbtn];
-    
-    UIButton *setbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2 + 150, 100, 30)];
-    [setbtn setTitle:@"设置音频" forState:UIControlStateNormal];
-    [setbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [setbtn addTarget:self action:@selector(setHandle) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:setbtn];
-    
-    UIButton *delbtn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, [UIScreen mainScreen].bounds.size.height/2 + 200, 100, 30)];
-    [delbtn setTitle:@"删除音频" forState:UIControlStateNormal];
-    [delbtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [delbtn addTarget:self action:@selector(delHandle) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:delbtn];
-}
-- (void)loginHandle {
-//    [MNHTTP loginWithUser:@"17681888581" pwd:@"111111a" block:^(id  _Nonnull dic) {NSLog(@"登录");}];
+
+- (void)setAudioAsset:(AVURLAsset *)audioAsset {
+    _audioAsset = audioAsset;
+    for (NSString *fmt in [audioAsset availableMetadataFormats]) {
+        for (AVMetadataItem *metadataItem in [audioAsset metadataForFormat:fmt]) {
+            if ([metadataItem.commonKey isEqualToString:@"title"]) {
+                self.audioInfo.song = [NSString stringWithFormat:@"%@",metadataItem.value];
+            }else if ([metadataItem.commonKey isEqualToString:@"artist"]){
+                self.audioInfo.singer = (NSString *)metadataItem.value;//歌手
+            }else if ([metadataItem.commonKey isEqualToString:@"albumName"])
+            {
+                self.audioInfo.albumName = (NSString *)metadataItem.value;
+            }else if ([metadataItem.commonKey isEqualToString:@"artwork"]) {
+                NSDictionary *dict=(NSDictionary *)metadataItem.value;
+                NSData *data=[dict objectForKey:@"data"];
+                self.audioInfo.image=[UIImage imageWithData:data];//图片
+            }
+        }
+    }
 }
 
-- (void)uploadHandle {
-//    [MNHTTP uploadMp3File:self.filePathLabel.text block:^(id  _Nonnull dic) {
-//        NSLog(@"%@",dic);
-//    }];
-}
-- (void)checkHandle {
-//    [MNHTTP fetchMp3List:^(id  _Nonnull dic) {
-//        NSLog(@"");
-//    }];
-}
-- (void)setHandle {
-//    [MNHTTP setToneWithSN:@"MDAhAQEAbGUwMDUzMDAwMDI1YQAA" block:^(id  _Nonnull dic) {
-//        NSLog(@"");
-//    }];
-}
-
-- (void)delHandle {
-//    [MNHTTP deleteToneWithIds:@[@(1346078971320790016)] block:^(id  _Nonnull dic) {
-//        NSLog(@"delete - %@",dic);
-//    }];
-}
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [self.player uninit];
+    [self.audioPlayer uninit];
 }
-
 
 @end

@@ -17,11 +17,11 @@
 #import "LMZAudioCell.h"
 @interface LMZAudioViewController ()<UITableViewDelegate,UITableViewDataSource,LMZRecordActionViewDelegate,LMZRecorderDelegate,LMZRecorderDelegate,AudioDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *audioTableview;
-@property (nonatomic,strong) NSArray<NSString *> *audioArray;
-@property (nonatomic,strong)LMZRecordActionView *lmzRecordActionView;
-@property (nonatomic,strong) LMZVoiceRecorder *audioRecoder;
-@property (nonatomic,strong) LMZAudioPlayer *audioPlayer;
+@property (weak, nonatomic) IBOutlet UITableView    *audioTableview;
+@property (nonatomic,strong) NSArray<NSString *>    *audioArray;
+@property (nonatomic,strong)LMZRecordActionView     *lmzRecordActionView;
+@property (nonatomic,strong) LMZVoiceRecorder       *audioRecoder;
+@property (nonatomic,strong) LMZAudioPlayer         *audioPlayer;
 
 
 @end

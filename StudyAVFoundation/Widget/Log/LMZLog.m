@@ -6,6 +6,7 @@
 //
 
 #import "LMZLog.h"
+#import "LMZSandBoxFileManager.h"
 @interface LMZLog()
 
 @end
@@ -30,10 +31,16 @@ static LMZLog *lmzLog;
     return lmzLog;
 }
 
-
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self seekAllFileCache];
+    }
+    return self;
+}
 // 沙盒文件查询
 - (void)seekAllFileCache {
-    
+    [LMZSandBoxFileManager createFileWithName:@"log" fileType:@"plist"];
 }
 
 /**

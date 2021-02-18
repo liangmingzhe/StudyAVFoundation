@@ -23,6 +23,7 @@
     return self;
 }
 
+
 - (void)setPramaters {
     NSDictionary *setting = @{
         AVFormatIDKey:@(kAudioFormatLinearPCM),
@@ -80,18 +81,20 @@
     [_recorder deleteRecording];
 }
 
+
+/**
+ * @param fileName    文件名
+ * @discussion 此函数将其他音频文件转换成mp3文件
+ */
 - (void)saveWithName:(NSString *)fileName {
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *filePath = [path stringByAppendingPathComponent:@"tmp.wav"];
-    NSString *targetPath = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"wangyu.mp3"]];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    [fileManager moveItemAtPath:filePath toPath:targetPath error:nil];
-    
-    [self convertToMp3File:filePath targetPath:targetPath withBlock:^(NSString * _Nullable errorInfo) {
-        NSLog(@"");
-    }];
+    NSString *targetPath = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.mp3",fileName]];
+    [self convertToMp3File:filePath targetPath:targetPath completed:^(NSString * _Nullable errorInfo) {}];
 }
 
+
+#pragma mark AVAudioRecorderDelegate 代理
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
     if ([self.delegate respondsToSelector:@selector(audioRecorderDidFinishRecording:successfully:)]) {
         [self.delegate audioRecorderDidFinishRecording:self successfully:flag];
@@ -99,11 +102,18 @@
 }
 
 
-- (void)convertToMp3File:(NSString *)filePath targetPath:(NSString *)targetPath withBlock:(MP3Block)block{
+#pragma mark 其他函数
+/**
+ * @param sourcePath    传入路径
+ * @param targetPath    输出路径
+ * @param mp3Block      回调处理
+ * @discussion 此函数将其他音频文件转换成mp3文件
+ */
+- (void)convertToMp3File:(NSString *)sourcePath targetPath:(NSString *)targetPath completed:(MP3Block)mp3Block{
     @try {
         int read, write;
         
-        FILE *pcm = fopen([filePath cStringUsingEncoding:1], "rb");     //source 被转换的音频文件位置
+        FILE *pcm = fopen([sourcePath cStringUsingEncoding:1], "rb");     //source 被转换的音频文件位置
         fseek(pcm, 4*1024,SEEK_CUR);                                    //skip file header
         FILE *mp3 = fopen([targetPath cStringUsingEncoding:1], "wb");   //output 输出生成的Mp3文件位置
         
@@ -133,7 +143,7 @@
     @catch (NSException *exception) {
         dispatch_async(dispatch_get_main_queue(), ^{
             //更新UI操作
-            block(exception.name);
+            mp3Block(exception.name);
         });
         
     }
@@ -141,7 +151,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //更新UI操作
             NSLog(@"MP3生成成功: %@",targetPath);
-            block(targetPath);
+            mp3Block(targetPath);
         });
         
     }

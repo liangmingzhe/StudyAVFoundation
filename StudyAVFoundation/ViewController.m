@@ -11,7 +11,7 @@
 #import "AudioViewController.h"
 #import "LMZAudioViewController.h"
 #import "LMZSandBoxFileManager.h"
-
+#import "CameraViewController.h"
 
 #define kFunctionCellID @"FunctionCell"
 #define kWidth   [UIScreen mainScreen].bounds.size.width
@@ -29,11 +29,12 @@
     // Do any additional setup after loading the view.
     [self setupData];
     [self setupUI];
-    NSArray<LMZFileModel *> *file = [LMZSandBoxFileManager seekFileWithTargetDirPath:@"" fileType:@"mp3"];
-    NSLog(@"%@",file);
-    [LMZSandBoxFileManager modifyFileNameWithFilePath:file[0].filePath newName:@"王母娘娘" actionBlock:^(int state, LMZFileModel * _Nullable fileModel) {
-        NSLog(@"");
-    }];
+//    [LMZSandBoxFileManager createFileWithName:@"log" fileType:@"plist"];
+//    NSArray<LMZFileModel *> *file = [LMZSandBoxFileManager seekFileWithTargetDirPath:@"" fileType:@"mp3"];
+//    NSLog(@"%@",file);
+//    [LMZSandBoxFileManager modifyFileNameWithFilePath:file[0].filePath newName:@"王母娘娘" actionBlock:^(int state, LMZFileModel * _Nullable fileModel) {
+//        
+//    }];
     
 }
 
@@ -43,7 +44,7 @@
 }
 
 - (void)setupUI {
-    self.title = @"AVFoundation";
+    self.title = @"学习AVFoundation";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.minimumLineSpacing = 0;
@@ -63,7 +64,8 @@
     @{@"title":@"音频",@"icon":@"audio"},
     @{@"title":@"视频",@"icon":@"video"},
     @{@"title":@"图片",@"icon":@"image"},
-    @{@"title":@"日志",@"icon":@"txt"}];
+    @{@"title":@"编解码",@"icon":@"video"}];
+//    @{@"title":@"日志",@"icon":@"txt"}];
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -102,10 +104,13 @@
         VideoViewController *vc = [[VideoViewController alloc] init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
+    }else if(indexPath.row == 3) {
+        CameraViewController *vc = [[CameraViewController alloc] init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
     }else {
         LMZAudioViewController *vc = [[LMZAudioViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
-        
     }
 }
 

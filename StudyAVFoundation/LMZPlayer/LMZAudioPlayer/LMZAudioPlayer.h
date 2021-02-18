@@ -12,12 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AudioDelegate<NSObject>
 
 - (void)playerCurrentTime:(NSTimeInterval)time;
+- (void)playerDidFinishPlaying:(LMZAudioPlayer *)player successfully:(BOOL)flag;
 @end
 
 
 @interface LMZAudioPlayer : NSObject
 
+
 @property (nonatomic,weak)id <AudioDelegate>delegate;
+
 - (NSTimeInterval)playerDuration;
 - (NSTimeInterval)playerCurrentTime;
 - (void)playerAudioWithUrl:(NSURL *)url;

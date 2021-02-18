@@ -70,7 +70,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"");
+    
 }
 
 - (NSString *)textFormatWithValue:(float)value duration:(float)duration {

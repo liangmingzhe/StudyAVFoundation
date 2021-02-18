@@ -65,7 +65,7 @@ static LMZSandBoxFileManager *manager;
     }
     
     LMZFileModel *fileModel = [[LMZFileModel alloc] init];
-    BOOL isExist = [[[LMZSandBoxFileManager sharedInstance] fileManager] fileExistsAtPath:filePath];
+    BOOL isExist = [LMZSandBoxFileManager isFileExit:filePath];
     if (isExist == YES) {
         NSString *newPath = [filePath mutableCopy];
         NSString * oldName = [[filePath lastPathComponent] stringByDeletingPathExtension];  //原文件名无扩展名
@@ -73,7 +73,7 @@ static LMZSandBoxFileManager *manager;
         //旧文件名和新文件名是否重名，如果是重名的直接返回成功无须判断
         if (![oldName isEqualToString:newName]) {
             newPath = [newPath stringByReplacingOccurrencesOfString:oldName withString:newName];
-            BOOL isNewPathExist = [[[LMZSandBoxFileManager sharedInstance] fileManager] fileExistsAtPath:newPath];  //新文件名不可以和路径下的文件重名
+            BOOL isNewPathExist = [LMZSandBoxFileManager isFileExit:newPath];  //新文件名不可以和路径下的文件重名
             if(isNewPathExist == YES) {
                 actionBlock(-5,nil);
                 return;
@@ -101,7 +101,7 @@ static LMZSandBoxFileManager *manager;
  *  @abstract 查询某个文件夹路径下某个类型的文件列表
  *  @param  dirPath     文件夹路径
  *  @param  fileType   文件类型
- *  @return 返回泛型数组包含文件文件
+ *  @return 返回泛型数组
  *
  */
 + (NSArray <LMZFileModel *>*)seekFileWithTargetDirPath:(NSString * _Nullable)dirPath fileType:(NSString *)fileType {
@@ -129,11 +129,35 @@ static LMZSandBoxFileManager *manager;
 }
 
 
+//沙盒Doument根路径
++ (NSString *)documentDirectory {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+//创建文件
++ (BOOL)createFileWithName:(NSString *)fileName fileType:(NSString *)fileType {
+    NSString *fileDir = [LMZSandBoxFileManager documentDirectory];
+    NSString *filePath = [fileDir stringByAppendingString:[NSString stringWithFormat:@"/%@.%@",fileName,fileType]];
+    
+    BOOL isExist = [LMZSandBoxFileManager isFileExit:filePath];
+    if (!isExist) {
+        BOOL isSuccess = [[[LMZSandBoxFileManager sharedInstance] fileManager] createFileAtPath:filePath contents:nil attributes:nil];
+        return isSuccess;
+    }
+    return YES;
+}
+
+#pragma mark:inner methods
 - (BOOL)isEmptyOrNil:(NSString *)string {
     if (string == nil || [string isEqualToString:@""]) {
         return YES;
     }
     return NO;
+}
+
+
++ (BOOL)isFileExit:(NSString *)filePath {
+    return [[[LMZSandBoxFileManager sharedInstance] fileManager] fileExistsAtPath:filePath];
 }
 
 @end

@@ -10,7 +10,7 @@
 #import "LMZVideoAVPlayer.h"
 #import "LMZVideoProgressView.h"
 #import "LMZVideoEditView.h"
-
+#import <Masonry/Masonry.h>
 #define  WIDTH           [UIScreen mainScreen].bounds.size.width
 #define  HEIGHT          [UIScreen mainScreen].bounds.size.height
 @interface VideoViewController ()<TZImagePickerControllerDelegate,LMZVideoAVPlayerProtocol,UINavigationControllerDelegate>
@@ -21,7 +21,9 @@
 @property (weak, nonatomic) IBOutlet UIView *topVideoScreenView;
 @property (weak, nonatomic) IBOutlet UIView *bottomControlPanelView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) LMZVideoEditView *videoEditView;
+@property (weak, nonatomic) IBOutlet LMZVideoEditView *videoEditView;
+
+
 
 @end
 
@@ -29,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _videoEditView;
     // 导航栏右侧按键初始化
 //    [self rightBtnHandle];
     
@@ -51,9 +53,6 @@
         }];
     };
     
-    self.videoEditView = [[[NSBundle mainBundle] loadNibNamed:@"LMZVideoEditView" owner:self options:nil] lastObject];
-    [self.videoEditView setFrame:CGRectMake(0, 0, self.bottomControlPanelView.frame.size.width, self.bottomControlPanelView.frame.size.height - 100)];
-    [self.bottomControlPanelView addSubview:self.videoEditView];
     
 }
 - (void)viewDidAppear:(BOOL)animated {
@@ -109,17 +108,26 @@
             NSData *data = [NSData dataWithContentsOfURL:url];
             NSLog(@"%@",data);
             dispatch_async(dispatch_get_main_queue(), ^{
+                CGFloat width,height;
                 if (videoSize.height > videoSize.width) {
-                    self.player = [[LMZVideoAVPlayer alloc] initWithFrame:CGRectMake(0, 0, self.topVideoScreenView.frame.size.height * video_proportion, self.topVideoScreenView.frame.size.height) url:url.absoluteString];
+                    width = self.topVideoScreenView.frame.size.height * video_proportion;
+                    height = self.topVideoScreenView.frame.size.height;
+                    self.player = [[LMZVideoAVPlayer alloc] initWithFrame:CGRectMake(0, 0, width, height) url:url.absoluteString];
                     
                 }else {
-                    self.player = [[LMZVideoAVPlayer alloc] initWithFrame:CGRectMake(0, 0, self.topVideoScreenView.frame.size.width, self.topVideoScreenView.frame.size.width /video_proportion) url:url.absoluteString];
+                    width = self.topVideoScreenView.frame.size.width;
+                    height = self.topVideoScreenView.frame.size.width /video_proportion;
+                    self.player = [[LMZVideoAVPlayer alloc] initWithFrame:CGRectMake(0, 0, width, height) url:url.absoluteString];
                 }
-
-//                [self.player setFrame:CGRectMake(0, 0, WIDTH, WIDTH/videoSize.width*videoSize.height)];
-                self.player.center = self.topVideoScreenView.center;
                 self.player.playDelegate = self;
                 [self.topVideoScreenView addSubview:self.player];
+                
+                [self.player mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.center.equalTo(self.topVideoScreenView);
+                    make.width.mas_equalTo(width);
+                    make.height.mas_equalTo(height);
+                }];
+                
                 
                 self.progressView.duration = self.player.totalTime;
                 self.progressView.current = self.player.currentTime;

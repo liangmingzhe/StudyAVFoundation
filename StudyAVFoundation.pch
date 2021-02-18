@@ -1,0 +1,14 @@
+//
+//  StudyAVFoundation.pch
+//  StudyAVFoundation
+//
+//  Created by 梁明哲 on 2021/2/11.
+//
+
+#ifndef StudyAVFoundation_pch
+#define StudyAVFoundation_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "LMZDateManager.h"
+#endif /* StudyAVFoundation_pch */

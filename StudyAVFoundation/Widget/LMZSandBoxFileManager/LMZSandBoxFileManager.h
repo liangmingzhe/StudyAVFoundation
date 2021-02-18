@@ -15,11 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  @abstract 文件管理单例
  *  @return 返回单例对象
  *
- *  @date   2021-01-23
  *  @author 梁明哲
+ *  @date   2021-01-23
  */
 + (id)sharedInstance;
-
 
 
 /**
@@ -37,13 +36,28 @@ NS_ASSUME_NONNULL_BEGIN
  *  @abstract 查询某个文件夹路径下某种类型的文件列表
  *  @param  dirPath     文件夹路径
  *  @param  fileType   文件类型
- *  @return 返回泛型数组包含文件文件
+ *  @return 返回泛型数组包含文件
  *
  *  @date   2021-01-23
  *  @author 梁明哲
  */
 + (NSArray <LMZFileModel *>*)seekFileWithTargetDirPath:(NSString * _Nullable)dirPath fileType:(NSString *)fileType;
+
+
+
+/**
+ *  @abstract 沙盒Doument根路径
+ *  @return 返回根路径
+ *
+ *  @date   2021-01-24
+ *  @author 梁明哲
+ */
++ (NSString *)documentDirectory;
+
++ (BOOL)createFileWithName:(NSString *)fileName fileType:(NSString *)fileType;
 @end
+
+
 
 
 @interface LMZFileModel: NSObject <NSMutableCopying>
